@@ -16,15 +16,15 @@ const navItems = [
 
 <header class="sticky top-0 z-50 bg-cream">
   <div class="px-6 lg:px-24 py-3 flex items-center justify-between">
-    <!-- Main Navigation -->
-    <nav class="flex items-center gap-4 lg:gap-6">
+    <!-- Main Navigation - hidden on mobile -->
+    <nav class="hidden lg:flex items-center gap-6">
       {navItems.map((item) => (
         <a 
           href={item.href}
           class:list={[
-            "text-base lg:text-lg leading-tight transition-colors duration-200",
+            "text-lg leading-tight transition-colors duration-200",
             item.id === activePage 
-              ? "font-serif italic" 
+              ? "font-serif font-black" 
               : "font-semibold hover:text-pink"
           ]}
         >
@@ -33,7 +33,18 @@ const navItems = [
       ))}
     </nav>
 
-    <!-- Secondary Navigation -->
+    <!-- Mobile menu button -->
+    <button 
+      class="lg:hidden p-2 text-charcoal"
+      aria-label="Toggle menu"
+      id="mobile-menu-btn"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Secondary Navigation - hidden on mobile -->
     <div class="hidden lg:flex items-center">
       <a 
         href="/about-me" 
@@ -48,29 +59,18 @@ const navItems = [
         about you
       </a>
     </div>
-
-    <!-- Mobile menu button -->
-    <button 
-      class="lg:hidden p-2 text-charcoal"
-      aria-label="Toggle menu"
-      id="mobile-menu-btn"
-    >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
   </div>
 
-  <!-- Mobile menu -->
-  <div class="hidden lg:hidden border-t border-charcoal/10" id="mobile-menu">
-    <div class="px-6 py-4 flex flex-wrap gap-4">
+  <!-- Mobile menu - Full Page -->
+  <div class="mobile-menu-hidden lg:!hidden fixed inset-0 top-[52px] bg-cream z-40 flex flex-col" id="mobile-menu">
+    <div class="flex-1 px-6 py-8 flex flex-col gap-6">
       {navItems.map((item) => (
         <a 
           href={item.href}
           class:list={[
-            "text-sm transition-colors duration-200",
+            "text-3xl transition-colors duration-200",
             item.id === activePage 
-              ? "font-serif italic" 
+              ? "font-serif font-black" 
               : "font-semibold hover:text-pink"
           ]}
         >
@@ -78,18 +78,24 @@ const navItems = [
         </a>
       ))}
     </div>
-    <div class="px-6 pb-4 flex gap-2">
-      <a href="/about-me" class="flex-1 px-4 py-2 bg-pink text-cream text-center text-sm font-semibold">about me</a>
-      <a href="/about-you" class="flex-1 px-4 py-2 border border-charcoal/20 text-charcoal text-center text-sm font-semibold">about you</a>
+    <div class="px-6 pb-8 flex gap-0">
+      <a href="/about-me" class="pl-4 pr-12 py-2 bg-charcoal text-cream text-base font-semibold">about me</a>
+      <a href="/about-you" class="pl-12 pr-4 py-2 border border-charcoal text-charcoal text-base font-semibold">about you</a>
     </div>
   </div>
 </header>
+
+<style>
+  .mobile-menu-hidden {
+    display: none;
+  }
+</style>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('mobile-menu-hidden');
   });
 </script>

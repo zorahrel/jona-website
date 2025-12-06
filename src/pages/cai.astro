@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CAI - Continuum AI - Design for the Continuum" activePage="cai">
+  <!-- Hero Section -->
+  <section class="px-6 lg:px-24 py-12 lg:py-20">
+    <div class="max-w-[1200px]">
+      <p class="text-2xl lg:text-[40px] leading-[1.2] font-semibold mb-12">
+        continuum = the spatio-temporal field where bodily 
+        development, socio-spiritual kinship, ecological 
+        interdependence, and political responsibility co-emerge.
+      </p>
+    </div>
+  </section>
+
+  <!-- When and How Section -->
+  <section class="px-6 lg:px-24 py-12 lg:py-16">
+    <h1 class="font-black text-4xl lg:text-[60px] leading-[1.2] max-w-[1400px] mb-12">
+      When and how does this continuum become experientially explicit?
+    </h1>
+    
+    <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold max-w-[1000px]">
+      We can think of the continuum as a space to read, treat as both curriculum and co-learner, 
+      linking environmental justice, transformation at a level "the thinking of the continuum" as a 
+      space to read.
+    </p>
+  </section>
+
+  <!-- CCF Framework Section -->
+  <section class="px-6 lg:px-24 py-12 lg:py-20">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+      <div class="lg:w-1/2">
+        <h2 class="font-black text-4xl lg:text-[60px] leading-[1.1]">
+          The Continuum Connection Framework (CCF) is a way to name and observe what happens in these practices trying to see whether somatic dramaturgies actually change how representers feel self–world–MOTH relations.
+        </h2>
+      </div>
+      
+      <div class="lg:w-1/2">
+        <h3 class="text-2xl lg:text-[40px] font-semibold mb-8">Dimensions of the "Continuum Connection"</h3>
+        
+        <div class="space-y-8">
+          <div>
+            <h4 class="text-lg lg:text-[25px] font-semibold mb-2">Embodied Presence / Interoception</h4>
+            <p class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-70 pl-6 border-l-2 border-charcoal/20">
+              This dimension resonates with interoceptive awareness research, but for us it is also pedagogical: practices like frame-drum work, Greek chorus, Grotowski-inspired exercises are deliberate techniques to expand this capacity.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-lg lg:text-[25px] font-semibold">Boundary / Threshold Experience</h4>
+          </div>
+          
+          <div>
+            <h4 class="text-lg lg:text-[25px] font-semibold">More-than-Human Relatedness</h4>
+          </div>
+          
+          <div>
+            <h4 class="text-lg lg:text-[25px] font-semibold">Collective Field / Communitas</h4>
+          </div>
+          
+          <div>
+            <h4 class="text-lg lg:text-[25px] font-semibold">Integration & Ethical Orientation</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAI Chat Interface Section -->
+  <section class="px-6 lg:px-24 py-12 lg:py-20">
+    <div class="max-w-[1000px] mx-auto">
+      <h2 class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-8 text-center">CAI</h2>
+      <p class="text-lg lg:text-[25px] font-semibold text-center mb-12 opacity-70">
+        Continuum AI - your guide through the research
+      </p>
+      
+      <!-- Chat Interface -->
+      <div class="border-2 border-charcoal rounded-lg overflow-hidden">
+        <!-- Chat Messages Area -->
+        <div class="h-[400px] p-6 bg-cream/50 overflow-y-auto" id="chat-messages">
+          <div class="space-y-4">
+            <div class="flex justify-start">
+              <div class="bg-charcoal text-cream px-4 py-3 rounded-lg max-w-[80%]">
+                <p class="font-semibold text-sm">
+                  Welcome. I can help you navigate this research on design for the continuum, 
+                  somatic dramaturgies, and more-than-human relations. What would you like to explore?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chat Input -->
+        <div class="border-t-2 border-charcoal p-4 bg-white">
+          <form class="flex gap-4" id="chat-form">
+            <input 
+              type="text" 
+              placeholder="Ask about the research..."
+              class="flex-1 px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base focus:outline-none focus:border-pink"
+              id="chat-input"
+            />
+            <button 
+              type="submit"
+              class="px-8 py-3 bg-charcoal text-cream font-semibold rounded-lg hover:bg-pink transition-colors"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Suggested Topics -->
+      <div class="mt-8">
+        <p class="text-sm font-semibold mb-4 opacity-70">Suggested topics:</p>
+        <div class="flex flex-wrap gap-3">
+          <button class="px-4 py-2 border-2 border-charcoal rounded-full text-sm font-semibold hover:bg-charcoal hover:text-cream transition-colors">
+            What is the continuum?
+          </button>
+          <button class="px-4 py-2 border-2 border-charcoal rounded-full text-sm font-semibold hover:bg-charcoal hover:text-cream transition-colors">
+            Explain re-enchantment
+          </button>
+          <button class="px-4 py-2 border-2 border-charcoal rounded-full text-sm font-semibold hover:bg-charcoal hover:text-cream transition-colors">
+            What are somatic dramaturgies?
+          </button>
+          <button class="px-4 py-2 border-2 border-charcoal rounded-full text-sm font-semibold hover:bg-charcoal hover:text-cream transition-colors">
+            MOTH representation
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Simple chat interaction (placeholder - can be connected to actual AI)
+  const form = document.getElementById('chat-form');
+  const input = document.getElementById('chat-input') as HTMLInputElement;
+  const messages = document.getElementById('chat-messages');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input?.value.trim();
+    if (!text) return;
+    
+    // Add user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'flex justify-end';
+    userMsg.innerHTML = `
+      <div class="bg-pink text-charcoal px-4 py-3 rounded-lg max-w-[80%]">
+        <p class="font-semibold text-sm">${text}</p>
+      </div>
+    `;
+    messages?.querySelector('.space-y-4')?.appendChild(userMsg);
+    
+    // Add placeholder AI response
+    setTimeout(() => {
+      const aiMsg = document.createElement('div');
+      aiMsg.className = 'flex justify-start';
+      aiMsg.innerHTML = `
+        <div class="bg-charcoal text-cream px-4 py-3 rounded-lg max-w-[80%]">
+          <p class="font-semibold text-sm">
+            This is a placeholder response. In a full implementation, this would connect to an AI 
+            trained on the research content to provide meaningful answers about the continuum, 
+            ecopedagogy, and more-than-human relations.
+          </p>
+        </div>
+      `;
+      messages?.querySelector('.space-y-4')?.appendChild(aiMsg);
+      messages?.scrollTo(0, messages.scrollHeight);
+    }, 500);
+    
+    if (input) input.value = '';
+    messages?.scrollTo(0, messages.scrollHeight);
+  });
+  
+  // Suggested topic buttons
+  document.querySelectorAll('button[class*="border-charcoal rounded-full"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (input) {
+        input.value = btn.textContent?.trim() || '';
+        input.focus();
+      }
+    });
+  });
+</script>
+
