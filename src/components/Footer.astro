@@ -1,17 +1,21 @@
 ---
 // Marquee footer with repeating text
-const text = "can we speak with the more than human?";
+const text = "design for the continuum: can we speak with the more-than-human?";
 ---
 
-<footer class="bg-charcoal text-cream overflow-hidden">
+<footer
+  class="fixed bottom-0 left-0 right-0 z-40 bg-charcoal text-cream overflow-hidden"
+>
   <div class="h-24 lg:h-[100px] flex items-center">
     <div class="marquee-animation whitespace-nowrap flex">
       <!-- Repeat text many times for seamless loop -->
-      {Array(6).fill(null).map(() => (
-        <span class="text-4xl lg:text-6xl font-semibold px-12">
-          {text}
-        </span>
-      ))}
+      {
+        Array(6)
+          .fill(null)
+          .map(() => (
+            <span class="text-4xl lg:text-6xl font-semibold px-48">{text}</span>
+          ))
+      }
     </div>
   </div>
 </footer>
@@ -20,7 +24,7 @@ const text = "can we speak with the more than human?";
   .marquee-animation {
     animation: marquee 25s linear infinite;
   }
-  
+
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -29,9 +33,8 @@ const text = "can we speak with the more than human?";
       transform: translateX(-50%);
     }
   }
-  
+
   .marquee-animation:hover {
     animation-play-state: paused;
   }
 </style>
-
