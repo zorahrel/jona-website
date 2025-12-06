@@ -1,12 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const tabs = [
-  { id: "herstories", label: "HERstories", code: "Ⓣ⓪➀" },
-  { id: "cantare", label: "CANTARE NEI LUOGHI", code: "Ⓣ⓪➁" },
-  { id: "choros", label: "CHOROS", code: "Ⓣ⓪➂" },
-  { id: "ccta", label: "CCTA", code: "Ⓣ⓪➃" },
-  { id: "embodied", label: "EMBODIED MUSICALITY", code: "Ⓣ⓪➄" },
+const sections = [
+  {
+    id: "herstories",
+    label: "HERstories",
+    code: "Ⓣ⓪➀",
+    location: "Femminamorta, Giarre",
+    duration: "13-16/8/2025",
+    facilitator: "Hiram Salsano, Rachele Andrioli, Barbara Crescimanno",
+    content: [
+      "The masterclass is led by teachers from different regions of Southern Italy (Puglia, Sicily, Campania), who will guide participants through the women's vocal and percussion repertoire of the South, and into the relationship between body movement and frame drum, drawing on techniques of the ancient Greek chorus and its rhythmic–choral movement in space.",
+      "Starting from the dynamics of the percussion circle, the work expands into movement through space, exploring how bodies and sounds relate physically and rhythmically in lines and ranks, and then in more complex formations such as diamonds, flocks, and packs.",
+      "Through choral movement, traditional singing, and percussion, participants will work on homophony/unison and vocal and percussive polyrhythms; on the voice as it is tied to gesture and movement; and on the drum as both musical and expressive instrument.",
+      "Drawing on each participant's skills and capacities, the masterclass encourages group-based artistic creation, helping everyone to engage with and gradually master the mechanisms of collective performance.",
+    ],
+  },
+  {
+    id: "cantare",
+    label: "CANTARE NEI LUOGHI",
+    code: "Ⓣ⓪➁",
+    location: "TBD",
+    duration: "TBD",
+    facilitator: "TBD",
+    content: [
+      "An exploration of site-specific singing practices, investigating how voice and acoustic space create meaning together. This research track examines the relationship between traditional singing practices and the environments in which they were performed and developed.",
+      "The project explores how geographical, architectural, and natural spaces have shaped vocal techniques, repertoires, and the social functions of singing across Mediterranean cultures.",
+    ],
+  },
+  {
+    id: "choros",
+    label: "CHOROS",
+    code: "Ⓣ⓪➂",
+    location: "TBD",
+    duration: "TBD",
+    facilitator: "TBD",
+    content: [
+      "An investigation into the ancient Greek chorus as a model for collective embodied practice. This research explores the techniques and principles of choral movement, rhythm, and voice that connected individuals to their community and cosmos.",
+      "The chorus was more than performance—it was a technology of coordination, synchronization, and collective intelligence that this research seeks to understand and reactivate.",
+    ],
+  },
+  {
+    id: "ccta",
+    label: "CCTA",
+    code: "Ⓣ⓪➃",
+    location: "TBD",
+    duration: "TBD",
+    facilitator: "TBD",
+    content: [
+      "Cross-Cultural Transmodal Aesthetics: an interdisciplinary investigation into how different cultures perceive, process, and express sensory experience across modalities.",
+      "This research examines the bridges between sound, movement, visual perception, and meaning-making, seeking universal patterns and culturally-specific innovations in human aesthetic experience.",
+    ],
+  },
+  {
+    id: "embodied",
+    label: "EMBODIED MUSICALITY",
+    code: "Ⓣ⓪➄",
+    location: "TBD",
+    duration: "TBD",
+    facilitator: "TBD",
+    content: [
+      "An exploration of how musical knowledge is stored, transmitted, and expressed through the body. This research investigates the somatic dimensions of musical practice—how rhythm lives in the muscles, how melody is felt in the breath.",
+      "The project draws on neuroscience, phenomenology, and traditional practices to understand how the body thinks musically and how this embodied intelligence can be cultivated and shared.",
+    ],
+  },
 ];
 ---
 
@@ -14,128 +71,289 @@ const tabs = [
   title="Research Log - Design for the Continuum"
   activePage="research-log"
 >
-  <div class="relative min-h-screen">
-    <!-- Main Content Area -->
-    <div class="pr-[280px] lg:pr-[360px]">
-      <!-- Hero Section -->
-      <section class="px-6 lg:px-24 py-12 lg:py-20">
-        <div class="flex items-start gap-4">
-          <div
-            class="w-2 bg-gradient-to-b from-pink via-pink/50 to-transparent h-[600px] flex-shrink-0"
-          >
-          </div>
-          <div class="flex-1">
-            <h1 class="font-black text-6xl lg:text-[100px] leading-[0.95] mb-2">
-              HERstories
-            </h1>
-            <p class="font-black text-3xl lg:text-[50px] leading-[1.1] mb-6">
-              Ⓣ⓪➀
-            </p>
-            <div
-              class="text-sm lg:text-[16px] leading-[1.4] font-semibold space-y-0.5 mb-10"
-            >
-              <p>location: Femminamorta, Giarre</p>
-              <p>duration: 13-16/8/2025</p>
-              <p>
-                facilitator: Hiram Salsano, Rachele Andrioli, Barbara
-                Crescimanno
-              </p>
-            </div>
+  <div class="accordion-fan">
+    {
+      sections.map((section, index) => (
+        <div
+          class:list={["fan-panel", index === 0 ? "expanded" : ""]}
+          data-index={index}
+        >
+          <!-- Tab/Handle -->
+          <button class="panel-tab" aria-expanded={index === 0 ? "true" : "false"}>
+            <div class="tab-border" />
+            <span class="tab-label">{section.label}</span>
+            <span class="tab-code">{section.code}</span>
+          </button>
 
-            <div class="bg-charcoal w-full max-w-[700px] aspect-[16/10] mb-10">
-            </div>
+          <!-- Expandable Content -->
+          <div class="panel-content">
+            <div class="content-scroll">
+              <div class="content-inner">
+                <div class="pink-bar" />
+                <div class="content-body">
+                  <h1 class="title" set:html={section.label.replace(/ /g, '<br/>')} />
+                  <p class="code">{section.code}</p>
 
-            <div
-              class="text-base lg:text-[20px] leading-[1.3] font-semibold space-y-6 max-w-[700px]"
-            >
-              <p>
-                The masterclass is led by teachers from different regions of
-                Southern Italy (Puglia, Sicily, Campania), who will guide
-                participants through the women's vocal and percussion repertoire
-                of the South, and into the relationship between body movement
-                and frame drum, drawing on techniques of the ancient Greek
-                chorus and its rhythmic–choral movement in space.
-              </p>
-              <p>
-                Starting from the dynamics of the percussion circle, the work
-                expands into movement through space, exploring how bodies and
-                sounds relate physically and rhythmically in lines and ranks,
-                and then in more complex formations such as diamonds, flocks,
-                and packs. The chorus gradually becomes three-dimensional,
-                opening toward the outside and engaging with its surroundings.
-              </p>
-              <p>
-                Through choral movement, traditional singing, and percussion,
-                participants will work on homophony/unison and vocal and
-                percussive polyrhythms; on the voice as it is tied to gesture
-                and movement; and on the drum as both musical and expressive
-                instrument. Attention will be given to coordination between BODY
-                movement, rhythm on the DRUM, and VOICE, to converging and
-                diverging rhythms and movements, on- and off-beat patterns,
-                pauses, doubled and halved tempos, basic pulse and rhythmic
-                cells, and meters in 2, in 3, and their combinations.
-              </p>
-              <p>
-                Drawing on each participant's skills and capacities, the
-                masterclass encourages group-based artistic creation, helping
-                everyone to engage with and gradually master the mechanisms of
-                collective performance.
-              </p>
+                  <div class="meta">
+                    <p>location: {section.location}</p>
+                    <p>duration: {section.duration}</p>
+                    <p>facilitator: {section.facilitator}</p>
+                  </div>
+
+                  <div class="image-placeholder" />
+
+                  <div class="text-content">
+                    {section.content.map((p) => (
+                      <p>{p}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-
-    <!-- Vertical Tabs - Fixed on the right -->
-    <div class="fixed right-0 top-[60px] bottom-0 flex z-30">
-      {
-        tabs.map((tab, index) => (
-          <a
-            href={`#${tab.id}`}
-            class:list={[
-              "h-full w-[56px] lg:w-[72px] relative cursor-pointer group transition-all duration-300",
-              index === 0
-                ? "bg-gradient-to-b from-pink via-pink/30 to-cream"
-                : "bg-gradient-to-b from-pink/40 via-pink/10 to-cream hover:from-pink hover:via-pink/30",
-            ]}
-          >
-            <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-charcoal" />
-            <span class="absolute bottom-6 left-1/2 font-black text-[10px] lg:text-[12px] tracking-wide whitespace-nowrap vertical-text">
-              {tab.label} <span class="opacity-50">{tab.code}</span>
-            </span>
-          </a>
-        ))
-      }
-    </div>
+      ))
+    }
   </div>
 </Layout>
 
 <style>
-  .vertical-text {
+  .accordion-fan {
+    display: flex;
+    min-height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+
+  /* ===== PANEL ===== */
+  .fan-panel {
+    display: flex;
+    flex-shrink: 0;
+    transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fan-panel:not(.expanded) {
+    flex-grow: 0;
+  }
+
+  .fan-panel.expanded {
+    flex-grow: 1;
+  }
+
+  /* ===== TAB ===== */
+  .panel-tab {
+    width: 60px;
+    flex-shrink: 0;
+    background: linear-gradient(to bottom, rgba(255, 123, 172, 0.4), rgba(255, 123, 172, 0.1), #fdf5e6);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .panel-tab:hover {
+    background: linear-gradient(to bottom, rgba(255, 123, 172, 0.7), rgba(255, 123, 172, 0.3), #fdf5e6);
+  }
+
+  .fan-panel.expanded .panel-tab {
+    background: linear-gradient(to bottom, #ff7bac, rgba(255, 123, 172, 0.4), #fdf5e6);
+  }
+
+  .tab-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #1d1d1b;
+  }
+
+  .tab-label,
+  .tab-code {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: #1d1d1b;
   }
 
-  /* Ensure content doesn't go under fixed tabs */
+  .tab-code {
+    font-weight: 600;
+    opacity: 0.5;
+    margin-top: 0.5rem;
+  }
+
+  /* ===== CONTENT ===== */
+  .panel-content {
+    flex-grow: 1;
+    background: #fdf5e6;
+    overflow: hidden;
+    width: 0;
+    opacity: 0;
+    transition:
+      width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
+  }
+
+  .fan-panel.expanded .panel-content {
+    width: auto;
+    opacity: 1;
+    transition:
+      width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s ease 0.2s;
+  }
+
+  .content-scroll {
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .content-inner {
+    display: flex;
+    gap: 1.5rem;
+    padding: 3rem;
+    min-height: 100%;
+  }
+
+  .pink-bar {
+    width: 8px;
+    flex-shrink: 0;
+    background: linear-gradient(to bottom, #ff7bac, rgba(255, 123, 172, 0.5), transparent);
+    min-height: 500px;
+  }
+
+  .content-body {
+    flex: 1;
+    max-width: 700px;
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    margin-bottom: 0.25rem;
+    color: #1d1d1b;
+  }
+
+  .code {
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #1d1d1b;
+  }
+
+  .meta {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: #1d1d1b;
+  }
+
+  .meta p {
+    margin: 0.2rem 0;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #1d1d1b;
+    margin-bottom: 2rem;
+  }
+
+  .text-content {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1d1d1b;
+  }
+
+  .text-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 1024px) {
-    .pr-\[280px\] {
-      padding-right: 200px;
+    .panel-tab {
+      width: 50px;
+    }
+
+    .tab-label {
+      font-size: 9px;
+    }
+
+    .content-inner {
+      padding: 2rem;
     }
   }
 
   @media (max-width: 768px) {
-    .pr-\[280px\] {
-      padding-right: 160px;
+    .panel-tab {
+      width: 36px;
     }
 
-    .fixed.right-0 a {
-      width: 32px !important;
+    .tab-label {
+      font-size: 8px;
     }
 
-    .vertical-text {
-      font-size: 8px !important;
+    .tab-code {
+      display: none;
+    }
+
+    .content-inner {
+      padding: 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pink-bar {
+      width: 100%;
+      height: 6px;
+      min-height: auto;
+      background: linear-gradient(to right, #ff7bac, rgba(255, 123, 172, 0.5), transparent);
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const panels = document.querySelectorAll<HTMLElement>(".fan-panel");
+    const tabs = document.querySelectorAll<HTMLButtonElement>(".panel-tab");
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        // Remove expanded from all
+        panels.forEach((p) => p.classList.remove("expanded"));
+        tabs.forEach((t) => t.setAttribute("aria-expanded", "false"));
+
+        // Add expanded to clicked
+        panels[index].classList.add("expanded");
+        tab.setAttribute("aria-expanded", "true");
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      const currentIndex = Array.from(panels).findIndex((p) =>
+        p.classList.contains("expanded")
+      );
+
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        const next = Math.min(currentIndex + 1, panels.length - 1);
+        tabs[next].click();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        const prev = Math.max(currentIndex - 1, 0);
+        tabs[prev].click();
+      }
+    });
+  });
+</script>

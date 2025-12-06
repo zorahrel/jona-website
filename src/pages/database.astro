@@ -1,22 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const databaseItems = [
   {
     title: "Interspecies Council",
-    description: "Methodology to introduce more-than-human ontologies into decision-making and policy-making.",
+    description:
+      "Methodology to introduce more-than-human ontologies into decision-making and policy-making.",
     link: "https://www.moralimaginations.com/interspecies-council",
     type: "methodology",
     year: 2021,
-    author: "Phoebe Tickell"
+    author: "Phoebe Tickell",
   },
   {
     title: "Nawpa",
-    description: "Political and spiritual philosophy of Kichwa community. Summak Kawsay.",
+    description:
+      "Political and spiritual philosophy of Kichwa community. Summak Kawsay.",
     link: "https://vimeo.com/7785711?share=copy",
     type: "video",
     year: 2007,
-    author: "Xavier Hurtado"
+    author: "Xavier Hurtado",
   },
   {
     title: "Venice Biennale Program",
@@ -24,7 +26,7 @@ const databaseItems = [
     link: "https://tba21.org/biennale2025",
     type: "event",
     year: 2025,
-    author: "TBA21–Academy"
+    author: "TBA21–Academy",
   },
   {
     title: "Sensing the Climate",
@@ -32,7 +34,7 @@ const databaseItems = [
     link: "https://serramadre.art/evento/sensing-the-climate-how-do-international-policy-makers-sense-nature/",
     type: "event",
     year: 2025,
-    author: "Joanne Yao"
+    author: "Joanne Yao",
   },
   {
     title: "The Mountain of Advanced Dreams",
@@ -40,7 +42,7 @@ const databaseItems = [
     link: "http://www.postmediabooks.it/2023/383maliweil/9788874903832.htm",
     type: "book",
     year: 2023,
-    author: "Mali Weil"
+    author: "Mali Weil",
   },
   {
     title: "On Behalf of Nature",
@@ -48,7 +50,7 @@ const databaseItems = [
     link: "https://www.meredithmonk.org/repertory/on-behalf-of-nature-2",
     type: "performance",
     year: 2013,
-    author: "Meredith Monk"
+    author: "Meredith Monk",
   },
   {
     title: "Assembly Performance",
@@ -56,7 +58,7 @@ const databaseItems = [
     link: "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/49172/MA%20Thesis_Dimitrios%20Kyriakos%20Machairidis_5235588.pdf",
     type: "thesis",
     year: 2025,
-    author: "D.K. Machairidis"
+    author: "D.K. Machairidis",
   },
   {
     title: "More-Than-Human Political Communities",
@@ -64,7 +66,7 @@ const databaseItems = [
     link: "https://journals.librarypublishing.arizona.edu/jpe/article/5942/galley/7272/view/",
     type: "paper",
     year: 2025,
-    author: "Various"
+    author: "Various",
   },
   {
     title: "Last Lamentation",
@@ -72,7 +74,7 @@ const databaseItems = [
     link: "https://valentinamedda.com/",
     type: "performer",
     year: 2024,
-    author: "Valentina Medda"
+    author: "Valentina Medda",
   },
   {
     title: "More Than Human Governance",
@@ -80,7 +82,7 @@ const databaseItems = [
     link: "https://www.demnext.org/projects/more-than-human-governance",
     type: "research",
     year: 2024,
-    author: "DemNext"
+    author: "DemNext",
   },
   {
     title: "Animismo Giuridico",
@@ -88,7 +90,7 @@ const databaseItems = [
     link: "https://theconversation.com/lanimisme-juridique-quand-un-fleuve-ou-la-nature-toute-entiere-livre-proces-214966",
     type: "article",
     year: 2023,
-    author: "The Conversation"
+    author: "The Conversation",
   },
   {
     title: "Poetics of Listening",
@@ -96,7 +98,7 @@ const databaseItems = [
     link: "https://www.bloomsbury.com/us/poetics-of-listening-9798765125816/",
     type: "book",
     year: 2025,
-    author: "Brandon LaBelle"
+    author: "Brandon LaBelle",
   },
   {
     title: "Touch Sanitation",
@@ -104,7 +106,7 @@ const databaseItems = [
     link: "https://feldmangallery.com/exhibition/096-touch-sanitation-ukeles-9-9-10-5-1984",
     type: "art",
     year: 1984,
-    author: "Mierle Laderman Ukeles"
+    author: "Mierle Laderman Ukeles",
   },
   {
     title: "Material Ecocriticism",
@@ -112,7 +114,7 @@ const databaseItems = [
     link: "https://www.researchgate.net/publication/295819661_Material_Ecocriticism_and_the_Creativity_of_Storied_Matter",
     type: "paper",
     year: 2013,
-    author: "Various"
+    author: "Various",
   },
   {
     title: "Embassy of the North Sea",
@@ -120,7 +122,7 @@ const databaseItems = [
     link: "https://www.embassyofthenorthsea.com/",
     type: "institution",
     year: 2020,
-    author: "Embassy"
+    author: "Embassy",
   },
   {
     title: "Whose Ocean? Assembly",
@@ -128,7 +130,7 @@ const databaseItems = [
     link: "https://www.uu.nl/en/research/sustainability/sustainable-ocean/our-research/whose-ocean",
     type: "assembly",
     year: 2025,
-    author: "Utrecht University"
+    author: "Utrecht University",
   },
   {
     title: "Speaker for the Living",
@@ -136,7 +138,7 @@ const databaseItems = [
     link: "https://zoop.earth/en/page/671/training-speakers-for-the-living",
     type: "methodology",
     year: 2022,
-    author: "Zoöp"
+    author: "Zoöp",
   },
   {
     title: "Composing with More-Than-Human",
@@ -144,7 +146,7 @@ const databaseItems = [
     link: "https://ses.library.usyd.edu.au/bitstream/handle/2123/33813/Zhen_H_Thesis.pdf",
     type: "thesis",
     year: 2024,
-    author: "Hao Zhen"
+    author: "Hao Zhen",
   },
   {
     title: "Rights of Nature Survey",
@@ -152,7 +154,7 @@ const databaseItems = [
     link: "https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf",
     type: "report",
     year: 2024,
-    author: "SOAS & LFN"
+    author: "SOAS & LFN",
   },
   {
     title: "Codesign with More-Than-Humans",
@@ -160,7 +162,7 @@ const databaseItems = [
     link: "https://eujournalfuturesresearch.springeropen.com/articles/10.1186/s40309-022-00205-7",
     type: "paper",
     year: 2022,
-    author: "Various"
+    author: "Various",
   },
   {
     title: "Lifeworlds",
@@ -168,7 +170,7 @@ const databaseItems = [
     link: "https://www.lifeworld.earth/",
     type: "podcast",
     year: 2022,
-    author: "Lifeworld"
+    author: "Lifeworld",
   },
   {
     title: "Musicians of the Planet",
@@ -176,7 +178,7 @@ const databaseItems = [
     link: "https://www.lifeworld.earth/episodes-blog/musiciansofplanet",
     type: "podcast",
     year: null,
-    author: "David Rothenberg"
+    author: "David Rothenberg",
   },
   {
     title: "Relational Representation",
@@ -184,7 +186,7 @@ const databaseItems = [
     link: "https://journals.plos.org/water/article?id=10.1371/journal.pwat.0000236",
     type: "paper",
     year: 2024,
-    author: "Various"
+    author: "Various",
   },
   {
     title: "Fare Umanità",
@@ -192,7 +194,7 @@ const databaseItems = [
     link: "https://www.pandorarivista.it/articoli/fare-umanita-di-francesco-remotti/",
     type: "article",
     year: 2020,
-    author: "Francesco Remotti"
+    author: "Francesco Remotti",
   },
   {
     title: "Minimum Viable Sentience (BOB)",
@@ -200,7 +202,7 @@ const databaseItems = [
     link: "https://iancheng.com/minimumviablesentience",
     type: "art",
     year: 2020,
-    author: "Ian Cheng"
+    author: "Ian Cheng",
   },
   {
     title: "Tanna",
@@ -208,124 +210,162 @@ const databaseItems = [
     link: null,
     type: "film",
     year: 2015,
-    author: "Martin Butler"
-  }
+    author: "Martin Butler",
+  },
 ];
 
 // Get unique types for filters
-const types = [...new Set(databaseItems.map(item => item.type))].sort();
+const types = [...new Set(databaseItems.map((item) => item.type))].sort();
 ---
 
 <Layout title="Database - Design for the Continuum" activePage="database">
   <!-- Hero Section -->
-  <section class="px-6 lg:px-24 py-8 lg:py-12">
-    <h1 class="font-black text-5xl lg:text-[80px] leading-[0.95] mb-3">Database</h1>
+  <section class="px-6 lg:px-24 py-12 lg:py-16">
+    <h1 class="font-black text-5xl lg:text-[80px] leading-[0.95] mb-4">
+      Database
+    </h1>
     <p class="text-base lg:text-lg font-semibold max-w-[600px] opacity-70">
       A collection of practices, references, methodologies, and resources.
     </p>
   </section>
 
-  <!-- Table Header -->
-  <section class="px-6 lg:px-24 border-b-2 border-charcoal">
-    <div class="grid grid-cols-12 gap-4 py-3 text-sm font-black uppercase tracking-wide">
-      <div class="col-span-4 lg:col-span-3">Author</div>
-      <div class="col-span-2 lg:col-span-1 text-center">Year</div>
-      <div class="col-span-3 lg:col-span-2">Type</div>
-      <div class="col-span-3 lg:col-span-6">Title</div>
-    </div>
-  </section>
-
-  <!-- Filter Pills (subtle) -->
-  <section class="px-6 lg:px-24 py-4 border-b border-charcoal/20 overflow-x-auto">
-    <div class="flex gap-2 min-w-max" id="filters">
-      <button 
-        class="filter-btn px-3 py-1 bg-charcoal text-cream font-semibold text-xs rounded-full transition-colors"
+  <!-- Minimal Filter Section -->
+  <section
+    class="px-6 lg:px-24 py-4 border-b-2 border-charcoal sticky top-[52px] bg-cream z-20"
+  >
+    <div class="flex flex-wrap items-center gap-2" id="filters">
+      <button
+        class="filter-btn px-4 py-1.5 bg-charcoal text-cream font-semibold text-xs transition-colors"
         data-filter="all"
       >
         All
       </button>
-      {types.map(type => (
-        <button 
-          class="filter-btn px-3 py-1 border border-charcoal/30 font-semibold text-xs rounded-full hover:bg-charcoal hover:text-cream transition-colors"
-          data-filter={type}
-        >
-          {type}
-        </button>
-      ))}
+      {
+        types.map((type) => (
+          <button
+            class="filter-btn px-4 py-1.5 border border-charcoal/30 font-semibold text-xs hover:bg-charcoal hover:text-cream transition-colors"
+            data-filter={type}
+          >
+            {type}
+          </button>
+        ))
+      }
     </div>
   </section>
 
-  <!-- Database Rows -->
-  <section class="px-6 lg:px-24">
-    <div id="database-list">
-      {databaseItems.map((item, index) => (
-        <a 
-          href={item.link || '#'}
-          target={item.link ? "_blank" : undefined}
-          rel={item.link ? "noopener noreferrer" : undefined}
-          class:list={[
-            "database-row grid grid-cols-12 gap-4 py-4 border-b border-charcoal/10 hover:bg-pink/10 transition-colors group cursor-pointer",
-            !item.link && "pointer-events-none"
-          ]}
-          data-type={item.type}
-        >
-          <div class="col-span-4 lg:col-span-3 font-semibold text-sm lg:text-base truncate">
-            {item.author}
-          </div>
-          <div class="col-span-2 lg:col-span-1 text-center text-sm lg:text-base opacity-60">
-            {item.year || '—'}
-          </div>
-          <div class="col-span-3 lg:col-span-2">
-            <span class="inline-block px-2 py-0.5 text-xs font-semibold bg-charcoal/10 rounded">
-              {item.type}
-            </span>
-          </div>
-          <div class="col-span-3 lg:col-span-6 font-semibold text-sm lg:text-base group-hover:text-pink transition-colors">
-            <span class="block truncate lg:whitespace-normal">{item.title}</span>
-            <span class="hidden lg:block text-xs opacity-50 mt-0.5 truncate">{item.description}</span>
-          </div>
-        </a>
-      ))}
+  <!-- Minimal Database Rows -->
+  <section>
+    <div
+      id="database-list"
+      class="divide-y divide-charcoal border-t border-charcoal"
+    >
+      {
+        databaseItems.map((item, index) => {
+          return (
+            <a
+              href={item.link || "#"}
+              target={item.link ? "_blank" : undefined}
+              rel={item.link ? "noopener noreferrer" : undefined}
+              class:list={[
+                "database-row group block py-5 lg:py-6 px-6 lg:px-24 hover:bg-charcoal/5 transition-colors",
+                !item.link && "pointer-events-none opacity-60",
+              ]}
+              data-type={item.type}
+            >
+              <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6">
+                {/* Author & Year */}
+                <div class="lg:w-[180px] shrink-0">
+                  <div class="font-semibold text-sm lg:text-base">
+                    {item.author}
+                  </div>
+                  <div class="text-xs lg:text-sm opacity-50">
+                    {item.year || "—"}
+                  </div>
+                </div>
+
+                {/* Type */}
+                <div class="lg:w-[100px] shrink-0">
+                  <span class="text-xs font-semibold uppercase tracking-wide opacity-60">
+                    {item.type}
+                  </span>
+                </div>
+
+                {/* Title & Description */}
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-black text-lg lg:text-xl leading-tight mb-1 group-hover:text-pink transition-colors">
+                    {item.title}
+                  </h3>
+                  <p class="text-sm lg:text-base font-semibold leading-relaxed opacity-70 line-clamp-2">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </a>
+          );
+        })
+      }
     </div>
   </section>
 
   <!-- Count -->
-  <section class="px-6 lg:px-24 py-8">
+  <section class="px-6 lg:px-24 py-8 pb-32">
     <p class="text-sm font-semibold opacity-50">
       <span id="count">{databaseItems.length}</span> resources
     </p>
   </section>
+
+  <!-- Floating AI Input -->
+  <div
+    class="fixed bottom-0 left-0 right-0 z-50 p-4 lg:p-6 pointer-events-none"
+  >
+    <a href="/cai" class="block max-w-[700px] mx-auto pointer-events-auto">
+      <div
+        class="flex gap-4 p-4 bg-white/90 backdrop-blur-sm border-2 border-charcoal rounded-lg shadow-lg"
+      >
+        <div
+          class="flex-1 px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base text-charcoal/50 bg-white"
+        >
+          Ask about the research...
+        </div>
+        <div
+          class="px-8 py-3 bg-charcoal text-cream font-semibold rounded-lg hover:bg-pink transition-colors flex items-center"
+        >
+          CAI →
+        </div>
+      </div>
+    </a>
+  </div>
 </Layout>
 
 <script>
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const rows = document.querySelectorAll('.database-row');
-  const countEl = document.getElementById('count');
-  
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-      
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const rows = document.querySelectorAll(".database-row");
+  const countEl = document.getElementById("count");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
       // Update button styles
-      filterBtns.forEach(b => {
-        b.classList.remove('bg-charcoal', 'text-cream');
-        b.classList.add('border', 'border-charcoal/30');
+      filterBtns.forEach((b) => {
+        b.classList.remove("bg-charcoal", "text-cream");
+        b.classList.add("border", "border-charcoal/30");
       });
-      btn.classList.add('bg-charcoal', 'text-cream');
-      btn.classList.remove('border', 'border-charcoal/30');
-      
+      btn.classList.add("bg-charcoal", "text-cream");
+      btn.classList.remove("border", "border-charcoal/30");
+
       // Filter rows
       let visibleCount = 0;
-      rows.forEach(row => {
-        const rowType = row.getAttribute('data-type');
-        if (filter === 'all' || rowType === filter) {
-          (row as HTMLElement).style.display = 'grid';
+      rows.forEach((row) => {
+        const rowType = row.getAttribute("data-type");
+        if (filter === "all" || rowType === filter) {
+          (row as HTMLElement).style.display = "block";
           visibleCount++;
         } else {
-          (row as HTMLElement).style.display = 'none';
+          (row as HTMLElement).style.display = "none";
         }
       });
-      
+
       // Update count
       if (countEl) countEl.textContent = String(visibleCount);
     });

@@ -91,7 +91,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CAI Chat Interface Section -->
-  <section class="px-6 lg:px-24 py-12 lg:py-20">
+  <section id="chat-section" class="px-6 lg:px-24 py-12 lg:py-20">
     <div class="max-w-[900px] mx-auto">
       <h2 class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-4 text-center">CAI</h2>
       <p class="text-base lg:text-[20px] font-semibold text-center mb-10 opacity-70">
@@ -153,6 +153,23 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Floating AI Input (hides when chat section is visible) -->
+  <div id="floating-input" class="fixed bottom-0 left-0 right-0 z-50 p-4 lg:p-6 pointer-events-none transition-all duration-300">
+    <button 
+      onclick="document.getElementById('chat-section').scrollIntoView({ behavior: 'smooth' }); document.getElementById('chat-input').focus();"
+      class="block max-w-[700px] mx-auto pointer-events-auto w-full"
+    >
+      <div class="flex gap-4 p-4 bg-white/90 backdrop-blur-sm border-2 border-charcoal rounded-lg shadow-lg">
+        <div class="flex-1 px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base text-charcoal/50 bg-white text-left">
+          Ask about the research...
+        </div>
+        <div class="px-8 py-3 bg-charcoal text-cream font-semibold rounded-lg hover:bg-pink transition-colors flex items-center">
+          Ask CAI
+        </div>
+      </div>
+    </button>
+  </div>
 </Layout>
 
 <style>
@@ -217,4 +234,26 @@ import Layout from '../layouts/Layout.astro';
       }
     });
   });
+
+  // Hide floating input when chat section is visible
+  const floatingInput = document.getElementById('floating-input');
+  const chatSection = document.getElementById('chat-section');
+  
+  if (floatingInput && chatSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            floatingInput.style.opacity = '0';
+            floatingInput.style.pointerEvents = 'none';
+          } else {
+            floatingInput.style.opacity = '1';
+            floatingInput.style.pointerEvents = 'auto';
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(chatSection);
+  }
 </script>

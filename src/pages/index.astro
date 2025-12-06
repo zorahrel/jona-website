@@ -126,7 +126,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Dividual Voice Section -->
-  <section class="px-6 lg:px-24 py-16 lg:py-24">
+  <section class="px-6 lg:px-24 py-16 lg:py-24 pb-32">
     <div class="max-w-[850px] mx-auto lg:mx-0 lg:ml-[200px]">
       <h2 class="text-4xl lg:text-[60px] font-black leading-[1.1] mb-3">dividual voice</h2>
       <svg class="w-24 lg:w-32 h-6 mb-6" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,5 +152,19 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Floating AI Input -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 p-4 lg:p-6 pointer-events-none">
+    <a href="/cai" class="block max-w-[700px] mx-auto pointer-events-auto">
+      <div class="flex gap-4 p-4 bg-white/90 backdrop-blur-sm border-2 border-charcoal rounded-lg shadow-lg">
+        <div class="flex-1 px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base text-charcoal/50 bg-white">
+          Ask about the research...
+        </div>
+        <div class="px-8 py-3 bg-charcoal text-cream font-semibold rounded-lg hover:bg-pink transition-colors flex items-center">
+          CAI →
+        </div>
+      </div>
+    </a>
+  </div>
 
 </Layout>
