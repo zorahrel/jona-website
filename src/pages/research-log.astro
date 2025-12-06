@@ -81,8 +81,10 @@ const sections = [
           <!-- Tab/Handle -->
           <button class="panel-tab" aria-expanded={index === 0 ? "true" : "false"}>
             <div class="tab-border" />
-            <span class="tab-label">{section.label}</span>
-            <span class="tab-code">{section.code}</span>
+            <div class="tab-text-wrapper">
+              <span class="tab-label">{section.label}</span>
+              <span class="tab-code">{section.code}</span>
+            </div>
           </button>
 
           <!-- Expandable Content -->
@@ -143,7 +145,15 @@ const sections = [
   .panel-tab {
     width: 60px;
     flex-shrink: 0;
-    background: linear-gradient(to bottom, rgba(255, 123, 172, 0.4), rgba(255, 123, 172, 0.1), #fdf5e6);
+    /* Gradient orizzontale: rosa solido a sinistra che sfuma verso crema/trasparente */
+    background: linear-gradient(
+      to right,
+      #ff7bac 0%,
+      rgba(255, 123, 172, 0.6) 15%,
+      rgba(255, 123, 172, 0.3) 40%,
+      rgba(255, 123, 172, 0.1) 70%,
+      #fdf5e6 100%
+    );
     border: none;
     cursor: pointer;
     display: flex;
@@ -156,11 +166,25 @@ const sections = [
   }
 
   .panel-tab:hover {
-    background: linear-gradient(to bottom, rgba(255, 123, 172, 0.7), rgba(255, 123, 172, 0.3), #fdf5e6);
+    background: linear-gradient(
+      to right,
+      #ff7bac 0%,
+      rgba(255, 123, 172, 0.8) 20%,
+      rgba(255, 123, 172, 0.5) 50%,
+      rgba(255, 123, 172, 0.2) 80%,
+      #fdf5e6 100%
+    );
   }
 
   .fan-panel.expanded .panel-tab {
-    background: linear-gradient(to bottom, #ff7bac, rgba(255, 123, 172, 0.4), #fdf5e6);
+    background: linear-gradient(
+      to right,
+      #ff7bac 0%,
+      #ff7bac 10%,
+      rgba(255, 123, 172, 0.7) 30%,
+      rgba(255, 123, 172, 0.4) 60%,
+      #fdf5e6 100%
+    );
   }
 
   .tab-border {
@@ -172,11 +196,17 @@ const sections = [
     background: #1d1d1b;
   }
 
-  .tab-label,
-  .tab-code {
+  .tab-text-wrapper {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tab-label {
     font-weight: 900;
     font-size: 11px;
     letter-spacing: 0.05em;
@@ -185,8 +215,9 @@ const sections = [
 
   .tab-code {
     font-weight: 600;
+    font-size: 11px;
     opacity: 0.5;
-    margin-top: 0.5rem;
+    color: #1d1d1b;
   }
 
   /* ===== CONTENT ===== */
