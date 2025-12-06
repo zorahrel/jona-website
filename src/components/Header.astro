@@ -23,8 +23,9 @@ const navItems = [
           href={item.href}
           class:list={[
             "text-lg leading-tight transition-colors duration-200",
+            item.id === 'cai' && "font-serif", /* CAI always in serif */
             item.id === activePage 
-              ? "font-serif font-black" 
+              ? "font-serif font-black italic" 
               : "font-semibold hover:text-pink"
           ]}
         >
@@ -69,8 +70,9 @@ const navItems = [
           href={item.href}
           class:list={[
             "text-3xl transition-colors duration-200",
+            item.id === 'cai' && "font-serif", /* CAI always in serif */
             item.id === activePage 
-              ? "font-serif font-black" 
+              ? "font-serif font-black italic" 
               : "font-semibold hover:text-pink"
           ]}
         >
