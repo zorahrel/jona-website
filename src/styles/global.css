@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Noto+Serif:wght@900&display=swap');
+
+/* Theme variables */
+@theme {
+  --color-charcoal: #1d1d1b;
+  --color-cream: #fafaf8;
+  --color-pink: #ff7bac;
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-serif: 'Noto Serif', Georgia, serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-animation {
+  animation: marquee 20s linear infinite;
+}
+
+/* Selection style */
+::selection {
+  background-color: var(--color-pink);
+  color: white;
+}

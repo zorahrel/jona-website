@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 3240.81">
+  <defs>
+    <clipPath id="clippath">
+      <rect x="0" y="2060.24" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect x="0" y="3140.15" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect x="0" y="980.24" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect x="-2114.25" y="980" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <rect x="-2114.25" y="2059.98" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <rect x="-2114.25" y="3139.62" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-6">
+      <rect x="2011.9" y="980" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-7">
+      <rect x="2011.9" y="2060.05" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <clipPath id="clippath-8">
+      <rect x="2011.9" y="3140.24" width="1920" height="100" style="fill: none;"/>
+    </clipPath>
+    <linearGradient id="Sfumatura_senza_nome_80" data-name="Sfumatura senza nome 80" x1="1380.79" y1="540.24" x2="1441.72" y2="540.24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff7bac"/>
+      <stop offset="0" stop-color="#ff7bac" stop-opacity=".96"/>
+      <stop offset=".05" stop-color="#ff7bac" stop-opacity=".78"/>
+      <stop offset=".09" stop-color="#ff7bac" stop-opacity=".61"/>
+      <stop offset=".14" stop-color="#ff7bac" stop-opacity=".47"/>
+      <stop offset=".2" stop-color="#ff7bac" stop-opacity=".34"/>
+      <stop offset=".25" stop-color="#ff7bac" stop-opacity=".23"/>
+      <stop offset=".32" stop-color="#ff7bac" stop-opacity=".15"/>
+      <stop offset=".4" stop-color="#ff7bac" stop-opacity=".08"/>
+      <stop offset=".49" stop-color="#ff7bac" stop-opacity=".03"/>
+      <stop offset=".63" stop-color="#ff7bac" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ff7bac" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="Sfumatura_senza_nome_80-2" data-name="Sfumatura senza nome 80" x1="1471.72" x2="1532.64" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-3" data-name="Sfumatura senza nome 80" x1="1562.64" x2="1623.57" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-4" data-name="Sfumatura senza nome 80" x1="1653.57" x2="1714.49" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-5" data-name="Sfumatura senza nome 80" x1="1744.49" x2="1805.42" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-6" data-name="Sfumatura senza nome 80" x1="84.58" y1="1620.19" x2="145.5" y2="1620.19" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-7" data-name="Sfumatura senza nome 80" x1="84.58" y1="2700.24" x2="145.5" y2="2700.24" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-8" data-name="Sfumatura senza nome 80" x1="1471.72" y1="1620.19" x2="1532.64" y2="1620.19" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-9" data-name="Sfumatura senza nome 80" x1="1562.64" y1="1620.19" x2="1623.57" y2="1620.19" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-10" data-name="Sfumatura senza nome 80" x1="1653.57" y1="1620.19" x2="1714.49" y2="1620.19" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-11" data-name="Sfumatura senza nome 80" x1="1744.49" y1="1620.19" x2="1805.42" y2="1620.19" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-12" data-name="Sfumatura senza nome 80" x1="1471.72" y1="2700.24" x2="1532.64" y2="2700.24" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-13" data-name="Sfumatura senza nome 80" x1="1562.64" y1="2700.24" x2="1623.57" y2="2700.24" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-14" data-name="Sfumatura senza nome 80" x1="1653.57" y1="2700.24" x2="1714.49" y2="2700.24" xlink:href="#Sfumatura_senza_nome_80"/>
+    <linearGradient id="Sfumatura_senza_nome_80-15" data-name="Sfumatura senza nome 80" x1="1744.49" y1="2700.24" x2="1805.42" y2="2700.24" xlink:href="#Sfumatura_senza_nome_80"/>
+  </defs>
+  <g id="Livello_2" data-name="Livello 2">
+    <g>
+      <rect y="1080.24" width="1920" height="1080" style="fill: none; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .28px;"/>
+      <rect x="1429.43" y="1131.32" width="203" height="25.1" style="fill: #1d1d1b; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .78px;"/>
+      <rect x="1632.42" y="1131.32" width="203" height="25.1" style="fill: none; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .78px;"/>
+      <text transform="translate(94.76 1153.97)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">abstract</tspan></text>
+      <text transform="translate(301.94 1153.97)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">framing</tspan></text>
+      <text transform="translate(508.87 1153.97)" style="fill: #1d1d1b; font-family: NotoSerif-Black, &apos;Noto Serif&apos;; font-size: 40px; font-weight: 800;"><tspan x="0" y="0">reseach log</tspan></text>
+      <text transform="translate(788.35 1151.61)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">database</tspan></text>
+      <text transform="translate(991.33 1153.97)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">CAI</tspan></text>
+      <text transform="translate(1438.31 1151.41)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">about me</tspan></text>
+      <text transform="translate(1728.85 1151.41)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">about you</tspan></text>
+      <g style="clip-path: url(#clippath);">
+        <rect x="0" y="2060.24" width="1920" height="100" style="fill: #1d1d1b;"/>
+        <text transform="translate(-580.69 2129.4)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+        <text transform="translate(1155.85 2129.4)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect y="2160.15" width="1920" height="1080" style="fill: none; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .28px;"/>
+      <rect x="1429.43" y="2211.22" width="203" height="25.1" style="fill: #1d1d1b; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .78px;"/>
+      <rect x="1632.42" y="2211.22" width="203" height="25.1" style="fill: none; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .78px;"/>
+      <text transform="translate(94.76 2233.88)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">abstract</tspan></text>
+      <text transform="translate(301.94 2233.88)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">framing</tspan></text>
+      <text transform="translate(508.87 2233.88)" style="fill: #1d1d1b; font-family: NotoSerif-Black, &apos;Noto Serif&apos;; font-size: 40px; font-weight: 800;"><tspan x="0" y="0">reseach log</tspan></text>
+      <text transform="translate(788.35 2231.51)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">database</tspan></text>
+      <text transform="translate(991.33 2233.88)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">CAI</tspan></text>
+      <text transform="translate(1438.31 2231.31)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">about me</tspan></text>
+      <text transform="translate(1728.85 2231.31)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">about you</tspan></text>
+      <g style="clip-path: url(#clippath-1);">
+        <rect x="0" y="3140.15" width="1920" height="100" style="fill: #1d1d1b;"/>
+        <text transform="translate(-580.69 3209.3)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+        <text transform="translate(1155.85 3209.3)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect y=".24" width="1920" height="1080" style="fill: none; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .28px;"/>
+      <rect x="1429.43" y="51.32" width="203" height="25.1" style="fill: #1d1d1b; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .78px;"/>
+      <rect x="1632.42" y="51.32" width="203" height="25.1" style="fill: none; stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: .78px;"/>
+      <text transform="translate(94.76 73.97)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">abstract</tspan></text>
+      <text transform="translate(301.94 73.97)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">framing</tspan></text>
+      <text transform="translate(508.87 73.97)" style="fill: #1d1d1b; font-family: NotoSerif-Black, &apos;Noto Serif&apos;; font-size: 40px; font-weight: 800;"><tspan x="0" y="0">reseach log</tspan></text>
+      <text transform="translate(788.35 71.61)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">database</tspan></text>
+      <text transform="translate(991.33 73.97)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 40px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">CAI</tspan></text>
+      <text transform="translate(1438.31 71.41)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">about me</tspan></text>
+      <text transform="translate(1728.85 71.41)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">about you</tspan></text>
+      <g style="clip-path: url(#clippath-2);">
+        <rect x="0" y="980.24" width="1920" height="100" style="fill: #1d1d1b;"/>
+        <text transform="translate(-580.69 1049.4)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+        <text transform="translate(1155.85 1049.4)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+      </g>
+    </g>
+    <text transform="translate(1526.48 1984.96) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CANTARE NEI LUOGHI</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➁</tspan></tspan></text>
+    <text transform="translate(1616.98 1986.81) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CHOROS</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➂</tspan></tspan></text>
+    <text transform="translate(1709.5 1986.81) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CCTA</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➃</tspan></tspan></text>
+    <text transform="translate(1803.55 1986.81) rotate(-90)" style="fill: #1d1d1b; font-family: Inter-Black, Inter; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan style="font-size: 60px;"><tspan x="0" y="0">EMBODIED MUSICALITY </tspan></tspan><tspan style="font-size: 18px;"><tspan x="0" y="21.6">Ⓣ⓪➄</tspan></tspan></text>
+    <text transform="translate(1526.48 904.96) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CANTARE NEI LUOGHI</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➁</tspan></tspan></text>
+    <text transform="translate(1438.96 904.96) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">HERstories</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➀</tspan></tspan></text>
+    <text transform="translate(1616.98 906.81) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CHOROS</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➂</tspan></tspan></text>
+    <text transform="translate(1709.5 906.81) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CCTA</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➃</tspan></tspan></text>
+    <text transform="translate(1803.55 906.81) rotate(-90)" style="fill: #1d1d1b; font-family: Inter-Black, Inter; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan style="font-size: 60px;"><tspan x="0" y="0">EMBODIED MUSICALITY </tspan></tspan><tspan style="font-size: 18px;"><tspan x="0" y="21.6">Ⓣ⓪➄</tspan></tspan></text>
+    <text transform="translate(1526.48 3064.96) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CANTARE NEI LUOGHI</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➁</tspan></tspan></text>
+    <text transform="translate(1616.98 3066.81) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CHOROS</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➂</tspan></tspan></text>
+    <text transform="translate(1709.5 3066.81) rotate(-90)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">CCTA</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="21.6">Ⓣ⓪➃</tspan></tspan></text>
+    <text transform="translate(1803.55 3066.81) rotate(-90)" style="fill: #1d1d1b; font-family: Inter-Black, Inter; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan style="font-size: 60px;"><tspan x="0" y="0">EMBODIED MUSICALITY </tspan></tspan><tspan style="font-size: 18px;"><tspan x="0" y="21.6">Ⓣ⓪➄</tspan></tspan></text>
+    <g style="clip-path: url(#clippath-3);">
+      <text transform="translate(-958.41 1049.16)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+    </g>
+    <g style="clip-path: url(#clippath-4);">
+      <text transform="translate(-958.41 2129.13)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+    </g>
+    <g style="clip-path: url(#clippath-5);">
+      <text transform="translate(-958.41 3208.77)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+    </g>
+    <g style="clip-path: url(#clippath-6);">
+      <text transform="translate(1431.21 1049.16)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+    </g>
+    <g style="clip-path: url(#clippath-7);">
+      <text transform="translate(1431.21 2129.2)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+    </g>
+    <g style="clip-path: url(#clippath-8);">
+      <text transform="translate(1431.21 3209.4)" style="fill: #fff; font-family: Inter-SemiBold, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">can we speak with the more than human?</tspan></text>
+    </g>
+  </g>
+  <g id="Livello_3" data-name="Livello 3">
+    <rect x="1380.79" y="173.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80);"/>
+    <rect x="1471.72" y="173.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-2);"/>
+    <rect x="1562.64" y="173.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-3);"/>
+    <rect x="1653.57" y="173.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-4);"/>
+    <rect x="1744.49" y="173.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-5);"/>
+    <rect x="84.58" y="1253.85" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-6);"/>
+    <rect x="84.58" y="2333.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-7);"/>
+    <rect x="1471.72" y="1253.85" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-8);"/>
+    <rect x="1562.64" y="1253.85" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-9);"/>
+    <rect x="1653.57" y="1253.85" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-10);"/>
+    <rect x="1744.49" y="1253.85" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-11);"/>
+    <rect x="1471.72" y="2333.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-12);"/>
+    <rect x="1562.64" y="2333.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-13);"/>
+    <rect x="1653.57" y="2333.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-14);"/>
+    <rect x="1744.49" y="2333.9" width="60.92" height="732.69" style="fill: url(#Sfumatura_senza_nome_80-15);"/>
+    <line x1="84.58" y1="1253.9" x2="84.58" y2="1986.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1835.42" y1="1253.9" x2="1835.42" y2="1986.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1653.57" y1="1253.9" x2="1653.57" y2="1986.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1744.49" y1="1253.9" x2="1744.49" y2="1986.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1471.72" y1="1253.9" x2="1471.72" y2="1986.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1562.64" y1="1253.9" x2="1562.64" y2="1986.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1835.42" y1="173.9" x2="1835.42" y2="906.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1653.57" y1="173.9" x2="1653.57" y2="906.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1744.49" y1="173.9" x2="1744.49" y2="906.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1471.72" y1="173.9" x2="1471.72" y2="906.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1562.64" y1="173.9" x2="1562.64" y2="906.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <line x1="1380.79" y1="173.9" x2="1380.79" y2="906.58" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    <text transform="translate(159.38 1341.17)" style="fill: #1d1d1b;"><tspan style="font-family: Inter-Black, Inter; font-size: 120px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="0">HERstories</tspan></tspan><tspan style="font-family: Inter-Black, Inter; font-size: 60px; font-variation-settings: &apos;wght&apos; 900, &apos;slnt&apos; 0; font-weight: 800;"><tspan x="0" y="93.6">Ⓣ⓪➀</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="180">location: Femminamorta, Giarre</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="201.6">duration: 13-16/8/2025</tspan></tspan><tspan style="font-family: Inter-SemiBold, Inter; font-size: 18px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="223.2">facilitator: Hiram Salsano, Rachele Andrioli, Barbara Crescimanno</tspan></tspan></text>
+    <g>
+      <line x1="84.58" y1="2333.71" x2="84.58" y2="3066.39" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+      <line x1="1835.42" y1="2333.71" x2="1835.42" y2="3066.39" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+      <line x1="1653.57" y1="2333.71" x2="1653.57" y2="3066.39" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+      <line x1="1744.49" y1="2333.71" x2="1744.49" y2="3066.39" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+      <line x1="1471.72" y1="2333.71" x2="1471.72" y2="3066.39" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+      <line x1="1562.64" y1="2333.71" x2="1562.64" y2="3066.39" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 4.25px;"/>
+    </g>
+    <text transform="translate(748.5 1650.32)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 25px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">The masterclass is led by teachers from different </tspan><tspan x="0" y="30">regions of Southern Italy (Puglia, Sicily, Campania), </tspan><tspan x="0" y="60">who will guide participants through the women’s </tspan><tspan x="0" y="90">vocal and percussion repertoire of the South, and </tspan><tspan x="0" y="120">into the relationship between body movement and </tspan><tspan x="0" y="150">frame drum, drawing on techniques of the ancient </tspan><tspan x="0" y="180">Greek chorus and its rhythmic–choral movement in </tspan><tspan x="0" y="210">space.</tspan><tspan x="0" y="288">Starting from the dynamics of the percussion circle, </tspan><tspan x="0" y="318">the work expands into movement through space, </tspan></text>
+    <text transform="translate(748.7 2352.08)" style="fill: #1d1d1b; font-family: Inter-SemiBold, Inter; font-size: 25px; font-variation-settings: &apos;wght&apos; 600, &apos;slnt&apos; 0; font-weight: 600;"><tspan x="0" y="0">exploring how bodies and sounds relate physically </tspan><tspan x="0" y="30">and rhythmically in lines and ranks, and then in more </tspan><tspan x="0" y="60">complex formations such as diamonds, flocks, and </tspan><tspan x="0" y="90">packs. The chorus gradually becomes </tspan><tspan x="0" y="120">three-dimensional, opening toward the outside and </tspan><tspan x="0" y="150">engaging with its surroundings.</tspan><tspan x="0" y="228">Through choral movement, traditional singing, and </tspan><tspan x="0" y="258">percussion, participants will work on </tspan><tspan x="0" y="288">homophony/unison and vocal and percussive </tspan><tspan x="0" y="318">polyrhythms; on the voice as it is tied to gesture and </tspan><tspan x="0" y="348">movement; and on the drum as both musical and </tspan><tspan x="0" y="378">expressive instrument. Attention will be given to </tspan><tspan x="0" y="408">coordination between BODY movement, rhythm on </tspan><tspan x="0" y="438">the DRUM, and VOICE, to converging and diverging </tspan><tspan x="0" y="468">rhythms and movements, on- and off-beat patterns, </tspan><tspan x="0" y="498">pauses, doubled and halved tempos, basic pulse </tspan><tspan x="0" y="528">and rhythmic cells, and meters in 2, in 3, and their </tspan><tspan x="0" y="558">combinations.</tspan><tspan x="0" y="618">Drawing on each participant’s skills and capacities, </tspan><tspan x="0" y="648">the masterclass encourages group-based artistic </tspan><tspan x="0" y="678">creation, helping everyone to engage with and </tspan><tspan x="0" y="708">gradually master the mechanisms of collective </tspan></text>
+    <rect x="144.89" y="1632.13" width="569.82" height="352.61" style="fill: #1d1d1b;"/>
+  </g>
+</svg>
