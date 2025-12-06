@@ -1,140 +1,344 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const databaseItems = [
+  {
+    title: "Interspecies Council",
+    description: "Methodology to introduce more-than-human ontologies into decision-making and policy-making.",
+    link: "https://www.moralimaginations.com/interspecies-council",
+    type: "methodology",
+    year: 2021,
+    keywords: "role-playing, species representation, ecological democracy"
+  },
+  {
+    title: "Nawpa - Xavier Hurtado",
+    description: "Political and spiritual philosophy of Kichwa community. Summak Kawsay and the fulfilment of a well-rounded life.",
+    link: "https://vimeo.com/7785711?share=copy",
+    type: "video",
+    year: 2007,
+    keywords: "indigenous worldview, Munay, Aity, Ruray, Yachay"
+  },
+  {
+    title: "TBA21–Academy Venice Biennale",
+    description: "How can art, sound, architecture, and community come together to imagine new futures for our oceans and planet?",
+    link: "https://tba21.org/biennale2025",
+    type: "event",
+    year: 2025,
+    keywords: "ocean, architecture, sustainability"
+  },
+  {
+    title: "Sensing the Climate: Policy Makers & Nature",
+    description: "How do international policy makers 'sense' nature? Environmental politics and international relations.",
+    link: "https://serramadre.art/evento/sensing-the-climate-how-do-international-policy-makers-sense-nature/",
+    type: "event",
+    year: 2025,
+    keywords: "environmental policy, international relations"
+  },
+  {
+    title: "School of Interspecies Diplomacies",
+    description: "The Mountain of Advanced Dreams by Mali Weil. Design fiction exploring multispecies coexistence.",
+    link: "http://www.postmediabooks.it/2023/383maliweil/9788874903832.htm",
+    type: "book",
+    year: 2023,
+    keywords: "design fiction, interspecies diplomacy, co-evolution"
+  },
+  {
+    title: "Meredith Monk - On Behalf of Nature",
+    description: "Sonic meditation on our intimate connection to nature. Illuminating interconnection and interdependency.",
+    link: "https://www.meredithmonk.org/repertory/on-behalf-of-nature-2",
+    type: "performance",
+    year: 2013,
+    keywords: "sonic meditation, voice, body, movement"
+  },
+  {
+    title: "Assembly Performance - D.K. Machairidis",
+    description: "Participatory practice in the roots of democracy. Embodied, plural, and reflective encounters.",
+    link: "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/49172/MA%20Thesis_Dimitrios%20Kyriakos%20Machairidis_5235588.pdf",
+    type: "thesis",
+    year: 2025,
+    keywords: "democratic participation, assembly, performance"
+  },
+  {
+    title: "Autonomous More-Than-Human Political Communities",
+    description: "Anarchist political ecology, multispecies care in the Catalan Pyrenees.",
+    link: "https://journals.librarypublishing.arizona.edu/jpe/article/5942/galley/7272/view/",
+    type: "paper",
+    year: 2025,
+    keywords: "anarchist ecology, multispecies care, agro-ecology"
+  },
+  {
+    title: "Valentina Medda - Last Lamentation",
+    description: "Permeable and porous boundary between body and space. Points of contact and interpenetration.",
+    link: "https://valentinamedda.com/",
+    type: "performer",
+    year: 2024,
+    keywords: "body, space, lamentation"
+  },
+  {
+    title: "More Than Human Governance Report",
+    description: "Exploring how governance and policy design can draw on more-than-human and planetary intelligences.",
+    link: "https://www.demnext.org/projects/more-than-human-governance",
+    type: "research",
+    year: 2024,
+    keywords: "governance, policy, planetary intelligence"
+  },
+  {
+    title: "Animismo Giuridico",
+    description: "Legal animism: when a river or nature itself brings lawsuit. Rights of Pacha Mama in Ecuador.",
+    link: "https://theconversation.com/lanimisme-juridique-quand-un-fleuve-ou-la-nature-toute-entiere-livre-proces-214966",
+    type: "article",
+    year: 2023,
+    keywords: "legal animism, rights of nature, Pacha Mama"
+  },
+  {
+    title: "Poetics of Listening - Brandon LaBelle",
+    description: "Inner life, social transformation, planetary practices. Listening across human and more-than-human worlds.",
+    link: "https://www.bloomsbury.com/us/poetics-of-listening-9798765125816/",
+    type: "book",
+    year: 2025,
+    keywords: "listening, phonosphere, third space"
+  },
+  {
+    title: "Touch Sanitation - Mierle Laderman Ukeles",
+    description: "Care performance art. Celebrating daily urban survival through sanitation as primary maintenance system.",
+    link: "https://feldmangallery.com/exhibition/096-touch-sanitation-ukeles-9-9-10-5-1984",
+    type: "art",
+    year: 1984,
+    keywords: "care, maintenance art, sanitation"
+  },
+  {
+    title: "Material Ecocriticism and Storied Matter",
+    description: "Matter as endowed with meanings, thick with stories. Narrative agency of the physical world.",
+    link: "https://www.researchgate.net/publication/295819661_Material_Ecocriticism_and_the_Creativity_of_Storied_Matter",
+    type: "paper",
+    year: 2013,
+    keywords: "new materialism, storied matter, narrative agency"
+  },
+  {
+    title: "Embassy of the North Sea",
+    description: "Direct political representation of the sea. The North Sea owns itself.",
+    link: "https://www.embassyofthenorthsea.com/",
+    type: "institution",
+    year: 2020,
+    keywords: "political representation, ocean rights"
+  },
+  {
+    title: "Whose Ocean? Assembly",
+    description: "Rewriting UN declarations from the perspective of seagulls, jellyfish and polymetallic nodules.",
+    link: "https://www.uu.nl/en/research/sustainability/sustainable-ocean/our-research/whose-ocean",
+    type: "assembly",
+    year: 2025,
+    keywords: "ocean governance, non-human perspectives"
+  },
+  {
+    title: "Zoöp - Speaker for the Living",
+    description: "Organisation for cooperation between human and nonhuman life. The Speaker helps translate interests.",
+    link: "https://zoop.earth/en/page/671/training-speakers-for-the-living",
+    type: "methodology",
+    year: 2022,
+    keywords: "MOTH representation, organizational design"
+  },
+  {
+    title: "Composing with the More-Than-Human - Hao Zhen",
+    description: "Opera as multi-sensory artform integrating the interconnected nature of existence.",
+    link: "https://ses.library.usyd.edu.au/bitstream/handle/2123/33813/Zhen_H_Thesis.pdf",
+    type: "thesis",
+    year: 2024,
+    keywords: "composition, opera, co-creation"
+  },
+  {
+    title: "Representing Rights of Nature",
+    description: "Survey of representative forms. Guardian models for Nature's voice.",
+    link: "https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf",
+    type: "report",
+    year: 2024,
+    keywords: "rights of nature, guardianship, legal representation"
+  },
+  {
+    title: "Codesign with More-Than-Humans",
+    description: "The First Multispecies Symposium (2100). Provotype for human-non-human collaborations.",
+    link: "https://eujournalfuturesresearch.springeropen.com/articles/10.1186/s40309-022-00205-7",
+    type: "paper",
+    year: 2022,
+    keywords: "codesign, provotype, speculative futures"
+  },
+  {
+    title: "Lifeworlds Podcast",
+    description: "Intimate dialogue with our planet's ecologies. Translators between human and beyond-human.",
+    link: "https://www.lifeworld.earth/",
+    type: "podcast",
+    year: 2022,
+    keywords: "ecology, multiple perspectives, healing"
+  },
+  {
+    title: "Musicians of the Planet - David Rothenberg",
+    description: "Making interspecies songs. Human music emerged from a world that sings.",
+    link: "https://www.lifeworld.earth/episodes-blog/musiciansofplanet",
+    type: "podcast",
+    year: null,
+    keywords: "interspecies music, phenomenology, composition"
+  },
+  {
+    title: "Relational Representation",
+    description: "Speaking WITH and not ABOUT Nature. Decision-making for ecosystems.",
+    link: "https://journals.plos.org/water/article?id=10.1371/journal.pwat.0000236",
+    type: "paper",
+    year: 2024,
+    keywords: "relational, representation, ecosystems"
+  },
+  {
+    title: "Fare Umanità - Francesco Remotti",
+    description: "Anthropopoiesis: humans must be constructed and shaped, knowing not just biological birth.",
+    link: "https://www.pandorarivista.it/articoli/fare-umanita-di-francesco-remotti/",
+    type: "article",
+    year: 2020,
+    keywords: "anthropology, identity, transformation"
+  },
+  {
+    title: "Minimum Viable Sentience (BOB) - Ian Cheng",
+    description: "Artistic research on AI and identities.",
+    link: "https://iancheng.com/minimumviablesentience",
+    type: "art",
+    year: 2020,
+    keywords: "AI, sentience, identity"
+  },
+  {
+    title: "Tanna",
+    description: "Film about tribal identities and decision making on the Pacific island of Tanna.",
+    link: null,
+    type: "film",
+    year: 2015,
+    keywords: "tribal, tradition, freedom"
+  }
+];
+
+// Get unique types for filters
+const types = [...new Set(databaseItems.map(item => item.type))].sort();
 ---
 
 <Layout title="Database - Design for the Continuum" activePage="database">
   <!-- Hero Section -->
-  <section class="px-6 lg:px-24 py-12 lg:py-20">
-    <h1 class="font-black text-7xl lg:text-[120px] leading-[0.95] mb-8">Database</h1>
-    <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold max-w-[800px]">
-      A collection of practices, references, and resources for design for the continuum.
+  <section class="px-6 lg:px-24 py-12 lg:py-16">
+    <h1 class="font-black text-6xl lg:text-[100px] leading-[0.95] mb-4">Database</h1>
+    <p class="text-lg lg:text-[22px] leading-[1.3] font-semibold max-w-[800px]">
+      A collection of practices, references, methodologies, and resources for design for the continuum.
     </p>
   </section>
 
   <!-- Filter Section -->
-  <section class="px-6 lg:px-24 py-8">
-    <div class="flex flex-wrap gap-4">
-      <button class="px-6 py-2 bg-charcoal text-cream font-semibold text-sm rounded-full">All</button>
-      <button class="px-6 py-2 border-2 border-charcoal font-semibold text-sm rounded-full hover:bg-charcoal hover:text-cream transition-colors">Practices</button>
-      <button class="px-6 py-2 border-2 border-charcoal font-semibold text-sm rounded-full hover:bg-charcoal hover:text-cream transition-colors">References</button>
-      <button class="px-6 py-2 border-2 border-charcoal font-semibold text-sm rounded-full hover:bg-charcoal hover:text-cream transition-colors">Communities</button>
-      <button class="px-6 py-2 border-2 border-charcoal font-semibold text-sm rounded-full hover:bg-charcoal hover:text-cream transition-colors">Concepts</button>
+  <section class="px-6 lg:px-24 py-6 sticky top-[52px] bg-cream z-20 border-b border-charcoal/10">
+    <div class="flex flex-wrap gap-3" id="filters">
+      <button 
+        class="filter-btn px-5 py-2 bg-charcoal text-cream font-semibold text-sm rounded-full transition-colors"
+        data-filter="all"
+      >
+        All
+      </button>
+      {types.map(type => (
+        <button 
+          class="filter-btn px-5 py-2 border-2 border-charcoal font-semibold text-sm rounded-full hover:bg-charcoal hover:text-cream transition-colors"
+          data-filter={type}
+        >
+          {type}
+        </button>
+      ))}
     </div>
   </section>
 
   <!-- Database Grid -->
-  <section class="px-6 lg:px-24 py-12 lg:py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Item 1 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-pink/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Practice</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Frame Drum Work</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Mediterranean percussion traditions as somatic pedagogy for threshold experience.
-        </p>
-      </div>
-      
-      <!-- Item 2 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-cyan-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Reference</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Descola's Typology</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Four ontological modes: naturalism, animism, totemism, analogism.
-        </p>
-      </div>
-      
-      <!-- Item 3 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-green-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Community</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Tarantismo</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Pugliese ritual complex as model of somatic-spiritual integration.
-        </p>
-      </div>
-      
-      <!-- Item 4 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-pink/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Concept</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Dividual Voice</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Self as relational, permeable node rather than indivisible unit.
-        </p>
-      </div>
-      
-      <!-- Item 5 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-cyan-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Reference</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Viveiros de Castro</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          "Making souls" vs "making bodies" - Amerindian perspectivism.
-        </p>
-      </div>
-      
-      <!-- Item 6 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-green-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Practice</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Greek Chorus</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Collective movement and voice as training for communitas experience.
-        </p>
-      </div>
-      
-      <!-- Item 7 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-pink/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Concept</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Re-enchantment</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Recovery of human-world relationality suppressed by industrial rationality.
-        </p>
-      </div>
-      
-      <!-- Item 8 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-cyan-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Reference</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Luigina Mortari</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Nature as non-given demanding open, generative encounter.
-        </p>
-      </div>
-      
-      <!-- Item 9 -->
-      <div class="group">
-        <div class="bg-charcoal/10 aspect-[4/3] mb-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-green-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <span class="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2 block">Concept</span>
-        <h3 class="font-black text-2xl lg:text-3xl mb-2">Ecopedagogy</h3>
-        <p class="text-sm lg:text-base font-semibold opacity-70">
-          Earth as both curriculum and co-learner, rooted in Paulo Freire.
-        </p>
-      </div>
-      
+  <section class="px-6 lg:px-24 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="database-grid">
+      {databaseItems.map((item) => (
+        <article 
+          class="database-item group border-2 border-charcoal/20 rounded-lg p-6 hover:border-charcoal transition-colors"
+          data-type={item.type}
+        >
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs font-semibold uppercase tracking-wide px-2 py-1 bg-charcoal/10 rounded">
+              {item.type}
+            </span>
+            {item.year && (
+              <span class="text-xs font-semibold opacity-50">{item.year}</span>
+            )}
+          </div>
+          
+          <h3 class="font-black text-xl lg:text-2xl leading-tight mb-3 group-hover:text-pink transition-colors">
+            {item.link ? (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                {item.title}
+              </a>
+            ) : (
+              item.title
+            )}
+          </h3>
+          
+          <p class="text-sm lg:text-base font-semibold opacity-70 mb-4 line-clamp-3">
+            {item.description}
+          </p>
+          
+          {item.keywords && (
+            <div class="flex flex-wrap gap-2">
+              {item.keywords.split(',').slice(0, 3).map(keyword => (
+                <span class="text-xs font-semibold px-2 py-1 bg-pink/20 rounded">
+                  {keyword.trim()}
+                </span>
+              ))}
+            </div>
+          )}
+          
+          {item.link && (
+            <a 
+              href={item.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-pink transition-colors"
+            >
+              <span>View resource</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
+        </article>
+      ))}
     </div>
   </section>
 </Layout>
 
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.database-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      
+      // Update button styles
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-charcoal', 'text-cream');
+        b.classList.add('border-2', 'border-charcoal');
+      });
+      btn.classList.add('bg-charcoal', 'text-cream');
+      btn.classList.remove('border-2', 'border-charcoal');
+      
+      // Filter items
+      items.forEach(item => {
+        const itemType = item.getAttribute('data-type');
+        if (filter === 'all' || itemType === filter) {
+          (item as HTMLElement).style.display = 'block';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
