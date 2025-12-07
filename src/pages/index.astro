@@ -19,181 +19,555 @@ import Layout from "../layouts/Layout.astro";
   <section class="px-6 lg:px-24 py-12 lg:py-20">
     <div class="lg:ml-[200px] max-w-[850px]">
       <div
+        id="abstract-content"
         class="space-y-8 text-lg lg:text-[25px] leading-[1.2] lg:leading-[30px] font-semibold"
       >
-        <p>
-          Debates around the rights of nature and environmental personhood
-          increasingly turn on the preposition of representation: whether we
-          speak about, for, or with non-human entities. Recent work on
-          relational representation, for instance, argues that speaking with
-          rivers or waterways requires an ongoing, situated relation rather than
-          a purely symbolic proxy. Yet even in these more advanced eco-juridical
-          models, the figure of the human representative remains largely taken
-          for granted: a bounded individual presumed capable of "hosting"
-          more-than-human perspectives without much attention to how such a
-          capacity is formed.
-        </p>
-
-        <p>
-          This research starts from that gap. Before representation comes the
-          formation of the representer. What kind of human subjectivity,
-          sensorium, and relational disposition is needed for more-than-human
-          (MOTH) beings to be intentionally and imaginally included in
-          decision-making at all?
-        </p>
-
-        <p>
-          Answering this questions requires a shift in how we understand
-          continuum and threshold in human–MOTH relations. Drawing from Luigina
-          Mortari's idea of nature as a non-given that demands an open,
-          generative encounter, and from agro-pastoral "grammars of
-          cohabitation" in the Mediterranean (Enzo Bianchi), the project treats
-          care as participation in a socio-ecological continuum that links
-          bodies, ancestors, landscapes, and futures. In dialogue with Descola's
-          typology of ontologies and Viveiros de Castro's contrast between
-          "making souls" and "making bodies," this continuum is not only
-          ecological but also socio-spiritual and political.
-        </p>
-
-        <p>
-          Design for the Continuum proposes a pre-deliberative,
-          pre-representational response to this condition: somatic dramaturgies
-          that work in the space of metaxy, staging thresholds as permeable
-          zones where new relations to the continuum can be rehearsed. Through
-          somatic, sonic and relational exercises—many of them emerging from
-          Mediterranean "continuum communities" and then re-framed within design
-          education—the project explores how designers, guardians and civic
-          actors can be trained to perceive themselves less as autonomous
-          individuals and more as dividual nodes in a wider ecology of care.
-        </p>
-
-        <p>
-          In this sense, the research is situated between design pedagogy and
-          emerging experiments in design-for-MOTH-governance. Its central
-          question is whether design can be reimagined as the formation of
-          bodies capable of co-regulating with the living world, so that future
-          practices of representation do not merely speak for nature, but emerge
-          from lives already entangled with it.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Concepts Section - Staggered Layout -->
-  <section class="px-6 lg:px-24 py-16 lg:py-24">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-y-32">
-      <!-- re-enchantment - top left -->
-      <div class="lg:col-start-1">
-        <h2 class="text-4xl lg:text-[60px] font-black leading-[1.1] mb-3">
-          re-enchantment
-        </h2>
-        <svg
-          class="w-24 lg:w-32 h-6 mb-6"
-          viewBox="0 0 120 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M2 10C6 4 10 4 14 10C18 16 22 16 26 10C30 4 34 4 38 10C42 16 46 16 50 10C54 4 58 4 62 10C66 16 70 16 74 10C78 4 82 4 86 10C90 16 94 16 98 10C102 4 106 4 110 10C114 16 118 16 118 10"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"></path>
-        </svg>
-        <div
-          class="text-sm lg:text-[15px] font-semibold leading-[1.5] max-w-[480px]"
-        >
+        <!-- Group 1: Always visible (2 paragraphs) -->
+        <div class="abstract-group" data-group="1">
           <p>
-            By re-enchantment I refer not to a nostalgic return to "magic," but
-            to contemporary efforts to counter Weberian "disenchantment" by
-            resto- ring a felt sense of liveliness, relationality, and mystery
-            in human–world relations without abandoning critical thought.
-            Scholars in environmen- tal humanities describe re-enchantment as a
-            way of unsettling modern notions of a dead, mute world,
-            foregrounding instead the affective and ethical force of vibrant,
-            more-than-human ecologies.
+            Debates around the rights of nature and environmental personhood
+            increasingly turn on the preposition of representation: whether we
+            speak about, for, or with non-human entities. Recent work on
+            relational representation, for instance, argues that speaking with
+            rivers or waterways requires an ongoing, situated relation rather
+            than a purely symbolic proxy. Yet even in these more advanced
+            eco-juridical models, the figure of the human representative remains
+            largely taken for granted: a bounded individual presumed capable of
+            "hosting" more-than-human perspectives without much attention to how
+            such a capacity is formed.
+          </p>
+
+          <p class="mt-8">
+            This research starts from that gap. Before representation comes the
+            formation of the representer. What kind of human subjectivity,
+            sensorium, and relational disposition is needed for more-than-human
+            (MOTH) beings to be intentionally and imaginally included in
+            decision-making at all?
+          </p>
+        </div>
+
+        <!-- Group 2: Hidden initially (2 paragraphs) -->
+        <div class="abstract-group hidden" data-group="2">
+          <p>
+            Answering this questions requires a shift in how we understand
+            continuum and threshold in human–MOTH relations. Drawing from
+            Luigina Mortari's idea of nature as a non-given that demands an
+            open, generative encounter, and from agro-pastoral "grammars of
+            cohabitation" in the Mediterranean (Enzo Bianchi), the project
+            treats care as participation in a socio-ecological continuum that
+            links bodies, ancestors, landscapes, and futures. In dialogue with
+            Descola's typology of ontologies and Viveiros de Castro's contrast
+            between "making souls" and "making bodies," this continuum is not
+            only ecological but also socio-spiritual and political.
+          </p>
+
+          <p class="mt-8">
+            Design for the Continuum proposes a pre-deliberative,
+            pre-representational response to this condition: somatic
+            dramaturgies that work in the space of metaxy, staging thresholds as
+            permeable zones where new relations to the continuum can be
+            rehearsed. Through somatic, sonic and relational exercises—many of
+            them emerging from Mediterranean "continuum communities" and then
+            re-framed within design education—the project explores how
+            designers, guardians and civic actors can be trained to perceive
+            themselves less as autonomous individuals and more as dividual nodes
+            in a wider ecology of care.
+          </p>
+        </div>
+
+        <!-- Group 3: Hidden initially (1 paragraph) -->
+        <div class="abstract-group hidden" data-group="3">
+          <p>
+            In this sense, the research is situated between design pedagogy and
+            emerging experiments in design-for-MOTH-governance. Its central
+            question is whether design can be reimagined as the formation of
+            bodies capable of co-regulating with the living world, so that
+            future practices of representation do not merely speak for nature,
+            but emerge from lives already entangled with it.
           </p>
         </div>
       </div>
 
-      <!-- empty space top right -->
-      <div class="hidden lg:block"></div>
-
-      <!-- empty space bottom left -->
-      <div class="hidden lg:block"></div>
-
-      <!-- ecopedagogy - bottom right -->
-      <div class="lg:col-start-2">
-        <h2 class="text-4xl lg:text-[60px] font-black leading-[1.1] mb-3">
-          ecopedagogy
-        </h2>
-        <svg
-          class="w-24 lg:w-32 h-6 mb-6"
-          viewBox="0 0 120 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      <!-- Slider Navigation -->
+      <div class="mt-10 flex items-center gap-4">
+        <!-- Back Button -->
+        <button
+          id="prev-btn"
+          class="text-lg lg:text-xl font-bold flex items-center gap-2 cursor-pointer hover:opacity-70 transition-opacity opacity-30 pointer-events-none"
+          aria-label="Precedente"
         >
-          <path
-            d="M2 10C6 4 10 4 14 10C18 16 22 16 26 10C30 4 34 4 38 10C42 16 46 16 50 10C54 4 58 4 62 10C66 16 70 16 74 10C78 4 82 4 86 10C90 16 94 16 98 10C102 4 106 4 110 10C114 16 118 16 118 10"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"></path>
-        </svg>
+          <svg
+            class="w-5 h-5 rotate-180"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 10H16M16 10L10 4M16 10L10 16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+
+        <!-- Dots indicator -->
+        <div class="flex items-center gap-2">
+          <span
+            id="dot-1"
+            class="w-2 h-2 rounded-full bg-current transition-opacity"></span>
+          <span
+            id="dot-2"
+            class="w-2 h-2 rounded-full bg-current opacity-30 transition-opacity"
+          ></span>
+          <span
+            id="dot-3"
+            class="w-2 h-2 rounded-full bg-current opacity-30 transition-opacity"
+          ></span>
+        </div>
+
+        <!-- Next Button -->
+        <button
+          id="next-btn"
+          class="text-lg lg:text-xl font-bold flex items-center gap-2 cursor-pointer hover:opacity-70 transition-opacity"
+          aria-label="Successivo"
+        >
+          <svg
+            class="w-5 h-5"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 10H16M16 10L10 4M16 10L10 16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const prevBtn = document.getElementById(
+      "prev-btn"
+    ) as HTMLButtonElement | null;
+    const nextBtn = document.getElementById(
+      "next-btn"
+    ) as HTMLButtonElement | null;
+    const groups = document.querySelectorAll(".abstract-group");
+    const dots = [
+      document.getElementById("dot-1"),
+      document.getElementById("dot-2"),
+      document.getElementById("dot-3"),
+    ];
+    let currentGroup = 1;
+    const totalGroups = 3;
+
+    function showGroup(index: number) {
+      groups.forEach((group, i) => {
+        const el = group as HTMLElement;
+        if (i + 1 === index) {
+          el.classList.remove("hidden");
+          el.style.animation = "fadeIn 0.4s ease-out";
+        } else {
+          el.classList.add("hidden");
+        }
+      });
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (dot) {
+          dot.style.opacity = i + 1 === index ? "1" : "0.3";
+        }
+      });
+
+      // Update button states
+      if (prevBtn) {
+        if (index <= 1) {
+          prevBtn.classList.add("opacity-30", "pointer-events-none");
+        } else {
+          prevBtn.classList.remove("opacity-30", "pointer-events-none");
+        }
+      }
+
+      if (nextBtn) {
+        if (index >= totalGroups) {
+          nextBtn.classList.add("opacity-30", "pointer-events-none");
+        } else {
+          nextBtn.classList.remove("opacity-30", "pointer-events-none");
+        }
+      }
+    }
+
+    prevBtn?.addEventListener("click", () => {
+      if (currentGroup > 1) {
+        currentGroup--;
+        showGroup(currentGroup);
+      }
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      if (currentGroup < totalGroups) {
+        currentGroup++;
+        showGroup(currentGroup);
+      }
+    });
+
+    // Initialize
+    showGroup(1);
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+
+  <!-- Floating Concepts Section -->
+  <section class="py-16 lg:py-24 overflow-hidden relative">
+    <!-- Floating Words Container -->
+    <div class="floating-words-container relative h-[300px] lg:h-[400px]">
+      <div class="floating-words-track">
+        <!-- re-enchantment -->
         <div
-          class="text-sm lg:text-[15px] font-semibold leading-[1.5] max-w-[480px]"
+          class="floating-word"
+          data-concept="reenchantment"
+          style="--float-offset: 0; --vertical-pos: 15%;"
         >
-          <p>
-            Ecopedagogy names a strand of critical pedagogy (rooted in Paulo
-            Freire) that links environmental and social justice, treating
-            education as a space to read and transform the connections between
-            ecological de- struction, oppression, and global inequalities. Greg
-            Misiaszek, for in- stance, defines ecopedagogy as a Freirean,
-            dialogical approach that cultivates critical ecoliteracy oriented
-            toward planetary justice and the disruption of anthropocentric,
-            neoliberal forms of violence.
-          </p>
+          <button class="word-title">re-enchantment</button>
+          <div class="word-description">
+            <svg
+              class="w-20 lg:w-24 h-5 mb-4"
+              viewBox="0 0 120 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 10C6 4 10 4 14 10C18 16 22 16 26 10C30 4 34 4 38 10C42 16 46 16 50 10C54 4 58 4 62 10C66 16 70 16 74 10C78 4 82 4 86 10C90 16 94 16 98 10C102 4 106 4 110 10C114 16 118 16 118 10"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"></path>
+            </svg>
+            <p>
+              By re-enchantment I refer not to a nostalgic return to "magic,"
+              but to contemporary efforts to counter Weberian "disenchantment"
+              by restoring a felt sense of liveliness, relationality, and
+              mystery in human–world relations without abandoning critical
+              thought. Scholars in environmental humanities describe
+              re-enchantment as a way of unsettling modern notions of a dead,
+              mute world, foregrounding instead the affective and ethical force
+              of vibrant, more-than-human ecologies.
+            </p>
+          </div>
+        </div>
+
+        <!-- ecopedagogy -->
+        <div
+          class="floating-word"
+          data-concept="ecopedagogy"
+          style="--float-offset: 1; --vertical-pos: 50%;"
+        >
+          <button class="word-title">ecopedagogy</button>
+          <div class="word-description">
+            <svg
+              class="w-20 lg:w-24 h-5 mb-4"
+              viewBox="0 0 120 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 10C6 4 10 4 14 10C18 16 22 16 26 10C30 4 34 4 38 10C42 16 46 16 50 10C54 4 58 4 62 10C66 16 70 16 74 10C78 4 82 4 86 10C90 16 94 16 98 10C102 4 106 4 110 10C114 16 118 16 118 10"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"></path>
+            </svg>
+            <p>
+              Ecopedagogy names a strand of critical pedagogy (rooted in Paulo
+              Freire) that links environmental and social justice, treating
+              education as a space to read and transform the connections between
+              ecological destruction, oppression, and global inequalities. Greg
+              Misiaszek, for instance, defines ecopedagogy as a Freirean,
+              dialogical approach that cultivates critical ecoliteracy oriented
+              toward planetary justice and the disruption of anthropocentric,
+              neoliberal forms of violence.
+            </p>
+          </div>
+        </div>
+
+        <!-- dividual voice -->
+        <div
+          class="floating-word"
+          data-concept="dividualvoice"
+          style="--float-offset: 2; --vertical-pos: 75%;"
+        >
+          <button class="word-title">dividual voice</button>
+          <div class="word-description">
+            <svg
+              class="w-20 lg:w-24 h-5 mb-4"
+              viewBox="0 0 120 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 10C6 4 10 4 14 10C18 16 22 16 26 10C30 4 34 4 38 10C42 16 46 16 50 10C54 4 58 4 62 10C66 16 70 16 74 10C78 4 82 4 86 10C90 16 94 16 98 10C102 4 106 4 110 10C114 16 118 16 118 10"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"></path>
+            </svg>
+            <p class="mb-3">
+              A dividual voice, in anthropological terms, is a self constituted
+              less as indivisible unit—person as metaphysically "cut from
+              other," point-like site of intention—and more as a relational,
+              permeable node that draws its identity from ongoing exchanges with
+              others and the more-than-human environment.
+            </p>
+            <p>
+              To speak of dividual voice, then, is to reimagine the person whose
+              voice does not so much originate as flow through—a voice permeated
+              by spirits, kin, landscapes, co-dwellers.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Dividual Voice Section -->
-  <section class="px-6 lg:px-24 py-16 lg:py-24 pb-32">
-    <div class="max-w-[850px] mx-auto lg:mx-0 lg:ml-[200px]">
-      <h2 class="text-4xl lg:text-[60px] font-black leading-[1.1] mb-3">
-        dividual voice
-      </h2>
-      <svg
-        class="w-24 lg:w-32 h-6 mb-6"
-        viewBox="0 0 120 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M2 10C6 4 10 4 14 10C18 16 22 16 26 10C30 4 34 4 38 10C42 16 46 16 50 10C54 4 58 4 62 10C66 16 70 16 74 10C78 4 82 4 86 10C90 16 94 16 98 10C102 4 106 4 110 10C114 16 118 16 118 10"
-          stroke="currentColor"
-          stroke-width="3"
-          stroke-linecap="round"></path>
-      </svg>
-      <div
-        class="text-sm lg:text-[15px] font-semibold leading-[1.5] max-w-[520px]"
-      >
-        <p class="mb-4">
-          A dividual voice, in anthropological terms, is a self constituted less
-          as indivisible unit—person as metaphysically "cut from other,"
-          point-like site of intention—and more as a relational, permeable node
-          that draws its identity from ongoing exchanges with others and the
-          more-than-human environment. As Marilyn Strathern puts it, a dividual
-          self is dissoluble—its qualities may be distributed via modes, goods,
-          and exchanges among others in the extended network.
-        </p>
-        <p>
-          To speak of dividual voice, then, is to reimagine the person whose
-          voice does not so much originate as flow through—a voice permeated by
-          spirits, kin, landscapes, co-dwellers—a mode of vocalization that may
-          be describing the authorship by others, spirits, ancestors and
-          other-than-humans.
-        </p>
-      </div>
-    </div>
-  </section>
+  <script>
+    const floatingWords = document.querySelectorAll(".floating-word");
+    const wordTitles = document.querySelectorAll(".word-title");
+    const floatingContainer = document.querySelector(
+      ".floating-words-container"
+    );
+    let expandedWord: HTMLElement | null = null;
+
+    function pauseAllAnimations() {
+      floatingWords.forEach((word) => {
+        (word as HTMLElement).style.animationPlayState = "paused, paused";
+      });
+    }
+
+    function resumeAllAnimations() {
+      floatingWords.forEach((word) => {
+        (word as HTMLElement).style.animationPlayState = "running, running";
+      });
+    }
+
+    function expandWord(wordEl: HTMLElement) {
+      // Collapse any previously expanded word
+      if (expandedWord && expandedWord !== wordEl) {
+        expandedWord.classList.remove("expanded");
+        // Remove offset from previously expanded word
+        (expandedWord as HTMLElement).style.setProperty("--offset-x", "0px");
+        (expandedWord as HTMLElement).style.setProperty("--offset-y", "0px");
+      }
+
+      // Pause all animations first
+      pauseAllAnimations();
+
+      const container = floatingContainer as HTMLElement;
+      const containerRect = container.getBoundingClientRect();
+      const wordRect = wordEl.getBoundingClientRect();
+
+      // Calculate the center of the container
+      const containerCenterX = containerRect.width / 2;
+      const containerCenterY = containerRect.height / 2;
+
+      // Calculate current word center relative to container
+      const wordCenterX =
+        wordRect.left - containerRect.left + wordRect.width / 2;
+      const wordCenterY =
+        wordRect.top - containerRect.top + wordRect.height / 2;
+
+      // Calculate offset needed to center the clicked word
+      const offsetX = containerCenterX - wordCenterX;
+      const offsetY = containerCenterY - wordCenterY;
+
+      // Apply offset to ALL words (they all shift together maintaining distances)
+      floatingWords.forEach((word) => {
+        const el = word as HTMLElement;
+        const currentOffsetX = parseFloat(
+          el.style.getPropertyValue("--offset-x") || "0"
+        );
+        const currentOffsetY = parseFloat(
+          el.style.getPropertyValue("--offset-y") || "0"
+        );
+        el.style.setProperty("--offset-x", `${currentOffsetX + offsetX}px`);
+        el.style.setProperty("--offset-y", `${currentOffsetY + offsetY}px`);
+      });
+
+      // Expand the clicked word
+      wordEl.classList.add("expanded");
+      expandedWord = wordEl;
+    }
+
+    function collapseWord() {
+      if (expandedWord) {
+        expandedWord.classList.remove("expanded");
+        // Remove offsets from all words
+        floatingWords.forEach((word) => {
+          const el = word as HTMLElement;
+          el.style.setProperty("--offset-x", "0px");
+          el.style.setProperty("--offset-y", "0px");
+        });
+        expandedWord = null;
+        resumeAllAnimations();
+      }
+    }
+
+    // Click on word title to expand
+    wordTitles.forEach((title) => {
+      title.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const wordEl = title.closest(".floating-word") as HTMLElement;
+        if (wordEl) {
+          if (wordEl.classList.contains("expanded")) {
+            collapseWord();
+          } else {
+            expandWord(wordEl);
+          }
+        }
+      });
+    });
+
+    // Pause on hover over individual words (not the whole container)
+    floatingWords.forEach((word) => {
+      word.addEventListener("mouseenter", () => {
+        if (!expandedWord) {
+          pauseAllAnimations();
+        }
+      });
+
+      word.addEventListener("mouseleave", () => {
+        if (!expandedWord) {
+          resumeAllAnimations();
+        }
+      });
+    });
+
+    // Close on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") collapseWord();
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (expandedWord && !expandedWord.contains(e.target as Node)) {
+        collapseWord();
+      }
+    });
+  </script>
+
+  <style>
+    .floating-words-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .floating-words-track {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .floating-word {
+      position: absolute;
+      top: var(--vertical-pos, 50%);
+      transform: translateY(-50%)
+        translate(var(--offset-x, 0px), var(--offset-y, 0px));
+      white-space: nowrap;
+      cursor: pointer;
+      background: var(--bg-color);
+      color: inherit;
+      padding: 0.5rem 1rem;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      animation:
+        floatWord 35s linear infinite,
+        floatVertical 8s ease-in-out infinite;
+      animation-delay: calc(var(--float-offset) * -11.66s),
+        calc(var(--float-offset) * -2s);
+      z-index: 1;
+    }
+
+    .floating-word .word-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .floating-word .word-title:hover {
+      opacity: 0.6;
+    }
+
+    .floating-word .word-description {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      white-space: normal;
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.5;
+      max-width: 480px;
+      transition:
+        max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s ease,
+        margin 0.4s ease;
+      margin-top: 0;
+    }
+
+    .floating-word.expanded {
+      z-index: 1000;
+    }
+
+    .floating-word.expanded .word-title {
+      white-space: nowrap;
+    }
+
+    .floating-word.expanded .word-description {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .floating-word .word-description {
+        font-size: 1rem;
+      }
+    }
+
+    @keyframes floatWord {
+      0% {
+        left: 100vw;
+      }
+      100% {
+        left: -50%;
+      }
+    }
+
+    @keyframes floatVertical {
+      0%,
+      100% {
+        margin-top: 0;
+      }
+      50% {
+        margin-top: 15px;
+      }
+    }
+  </style>
 </Layout>

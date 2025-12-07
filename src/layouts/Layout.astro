@@ -6,9 +6,10 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   activePage?: 'abstract' | 'framing' | 'research-log' | 'database' | 'cai';
+  fitContent?: boolean;
 }
 
-const { title, activePage = 'abstract' } = Astro.props;
+const { title, activePage = 'abstract', fitContent = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,10 +23,10 @@ const { title, activePage = 'abstract' } = Astro.props;
   </head>
   <body class="min-h-screen flex flex-col">
     <Header activePage={activePage} />
-    <main class="flex-1 pb-28 lg:pb-32">
+    <main class:list={['flex-1 flex flex-col', fitContent ? '' : 'pb-24 lg:pb-28']}>
       <slot />
     </main>
-    <Footer />
+    <Footer staticPosition={fitContent} />
   </body>
 </html>
 

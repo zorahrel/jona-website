@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Framing - Design for the Continuum" activePage="framing">
   <!-- Hero Section -->
   <section class="px-6 lg:px-24 py-12 lg:py-20">
-    <h1 class="font-black text-4xl lg:text-[60px] leading-[1.1] max-w-[1400px]">
+    <h1 class="font-black text-3xl lg:text-[50px] leading-[1.1] max-w-[1400px]">
       Recent eco-juridical moves (e.g., rights of nature, more-than-human
       councils) extend standing to non-human beings yet leave largely unexamined
       the formation of the representer.
@@ -14,127 +14,204 @@ import Layout from "../layouts/Layout.astro";
 
   <!-- Posit Statement -->
   <section class="px-6 lg:px-24 py-12 lg:py-16">
-    <h2 class="font-black text-4xl lg:text-[60px] leading-[1.2] max-w-[1400px]">
+    <h2 class="font-black text-3xl lg:text-[50px] leading-[1.2] max-w-[1400px]">
       I posit that before representation comes understanding and training
       representational subjectivity (even in a collective perspective).
     </h2>
   </section>
 
-  <!-- Research Problem Section -->
-  <section class="px-6 lg:px-24 py-12 lg:py-16">
-    <div class="flex flex-col lg:flex-row gap-8 lg:gap-24">
-      <div class="lg:w-1/3">
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2">
-          Research Problem
-        </h3>
-        <h3
-          class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2 opacity-20"
-        >
-          Research Question
-        </h3>
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1] opacity-20">
-          Research Objectives
-        </h3>
-      </div>
-      <div
-        class="lg:w-2/3 text-lg lg:text-[25px] leading-[1.2] lg:leading-[30px] font-semibold max-w-[800px]"
-      >
-        <p class="mb-6">
-          All living can be thought of as meeting (Buber) and when we are
-          dealing with representation of MOTH subjectivity, an attitude of
-          meeting the living as an intersubjective experience need necessarily
-          be adopted.
-        </p>
-        <p class="mb-6">
-          This is obviously a poetic as well as a political, or poethical
-          approach. In Native Hawaiian world-making, an element of the
-          world—wind, rock, ancestor, or place—is experienced as alive insofar
-          as it participates in, and is carried by, the ongoing creation of
-          stories.
-        </p>
-        <p class="mb-6">
-          From this epistemological perspective, moʻolelo (story) is not just
-          narrative but a living weave of relations.
-        </p>
-        <p class="mb-6">
-          Reductionist mechanistic views are obsolete, we require ways of
-          engaging with the world that present possibilities for co existance.
-          For this, it is important to explore the whole range of
-          intersubjective experiences, starting from the Ethics of care, which
-          is about the relationship of respect and commitment for what is
-          radically foreign to us. A relationship experienced firsthand, in the
-          cognitive encounter "open and receptive" (p. 63) that makes experience
-          the starting point for the development of new vocabularies. Nature, in
-          fact, is not a given, but in the encounter, the subject experiences "a
-          generative thinking that invents new paths for interpreting
-          experience"
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- Mobile Fixed Navigation for Research -->
+  <div
+    id="research-mobile-nav"
+    class="fixed top-14 left-0 right-0 z-40 bg-(--bg-color) py-3 px-6 shadow-sm lg:hidden opacity-0 pointer-events-none transition-opacity duration-300"
+  >
+    <h3
+      class="research-mobile-nav-item font-black text-xl leading-[1.1] mb-0.5 transition-opacity duration-300"
+      data-target="section-problem"
+    >
+      Research Problem
+    </h3>
+    <h3
+      class="research-mobile-nav-item font-black text-xl leading-[1.1] mb-0.5 opacity-20 transition-opacity duration-300"
+      data-target="section-question"
+    >
+      Research Question
+    </h3>
+    <h3
+      class="research-mobile-nav-item font-black text-xl leading-[1.1] opacity-20 transition-opacity duration-300"
+      data-target="section-objectives"
+    >
+      Research Objectives
+    </h3>
+  </div>
 
-  <!-- Research Question Section -->
-  <section class="px-6 lg:px-24 py-12 lg:py-16">
+  <!-- Research Sections Container -->
+  <section class="research-container px-6 lg:px-24 py-12 lg:py-16 relative">
     <div class="flex flex-col lg:flex-row gap-8 lg:gap-24">
-      <div class="lg:w-1/3">
-        <h3
-          class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2 opacity-20"
-        >
-          Research Problem
-        </h3>
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2">
-          Research Question
-        </h3>
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1] opacity-20">
-          Research Objectives
-        </h3>
+      <!-- Desktop Sticky Sidebar -->
+      <div class="lg:w-1/3 research-sidebar">
+        <div class="hidden lg:block lg:sticky lg:top-24">
+          <h3
+            id="nav-problem"
+            class="research-nav-item font-black text-[60px] leading-[1.1] mb-2 transition-opacity duration-300"
+            data-target="section-problem"
+          >
+            Research Problem
+          </h3>
+          <h3
+            id="nav-question"
+            class="research-nav-item font-black text-[60px] leading-[1.1] mb-2 opacity-20 transition-opacity duration-300"
+            data-target="section-question"
+          >
+            Research Question
+          </h3>
+          <h3
+            id="nav-objectives"
+            class="research-nav-item font-black text-[60px] leading-[1.1] opacity-20 transition-opacity duration-300"
+            data-target="section-objectives"
+          >
+            Research Objectives
+          </h3>
+        </div>
       </div>
+
+      <!-- Scrolling Content -->
       <div class="lg:w-2/3">
-        <!-- Research Questions Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-          <!-- RQ1 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
-            >
+        <!-- Research Problem Content -->
+        <div id="section-problem" class="research-section mb-24 lg:mb-40">
+          <div
+            class="text-lg lg:text-[25px] leading-[1.2] lg:leading-[30px] font-semibold max-w-[800px]"
+          >
+            <p class="mb-6">
+              All living can be thought of as meeting (Buber) and when we are
+              dealing with representation of MOTH subjectivity, an attitude of
+              meeting the living as an intersubjective experience need
+              necessarily be adopted.
+            </p>
+            <p class="mb-6">
+              This is obviously a poetic as well as a political, or poethical
+              approach. In Native Hawaiian world-making, an element of the
+              world—wind, rock, ancestor, or place—is experienced as alive
+              insofar as it participates in, and is carried by, the ongoing
+              creation of stories.
+            </p>
+            <p class="mb-6">
+              From this epistemological perspective, moʻolelo (story) is not
+              just narrative but a living weave of relations.
+            </p>
+            <p class="mb-6">
+              Reductionist mechanistic views are obsolete, we require ways of
+              engaging with the world that present possibilities for co
+              existance. For this, it is important to explore the whole range of
+              intersubjective experiences, starting from the Ethics of care,
+              which is about the relationship of respect and commitment for what
+              is radically foreign to us. A relationship experienced firsthand,
+              in the cognitive encounter "open and receptive" (p. 63) that makes
+              experience the starting point for the development of new
+              vocabularies. Nature, in fact, is not a given, but in the
+              encounter, the subject experiences "a generative thinking that
+              invents new paths for interpreting experience"
+            </p>
+          </div>
+        </div>
+
+        <!-- Research Question Content -->
+        <div id="section-question" class="research-section mb-24 lg:mb-40">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+            <!-- RQ1 -->
+            <div class="relative">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓆ➀</h4>
+                <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
+                  In what ways can we re-enchant human rationality and
+                  relationality so that the threshold between the human and
+                  (super)natural forces is unlearned?
+                </p>
+              </div>
             </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓆ➀</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                In what ways can we re-enchant human rationality and
-                relationality so that the threshold between the human and
-                (super)natural forces is unlearned?
-              </p>
+            <!-- RQ2 -->
+            <div class="relative">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓆ➁</h4>
+                <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
+                  What are the ways in which experiences can be designed,
+                  curated (and measured) to act as a catalyst for the unlearning
+                  of threshold and re-enchantment of human rationality and
+                  relationality?
+                </p>
+              </div>
+            </div>
+            <!-- RQ3 -->
+            <div class="relative">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓆ➂</h4>
+                <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
+                  What kind of potentialities of engagement arise, after human
+                  re-enchantment, from queering the relationship with MOTH?
+                </p>
+              </div>
             </div>
           </div>
-          <!-- RQ2 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
-            >
+        </div>
+
+        <!-- Research Objectives Content -->
+        <div id="section-objectives" class="research-section">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- RO1 -->
+            <div class="relative">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓄ➀</h4>
+                <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
+                  To select and analyze practices coming from Mediterranean
+                  ancestral "continuum" communities, figuring out ways to learn
+                  how their effects and affects can be measured
+                </p>
+              </div>
             </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓆ➁</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                What are the ways in which experiences can be designed, curated
-                (and measured) to act as a catalyst for the unlearning of
-                threshold and re-enchantment of human rationality and
-                relationality?
-              </p>
+            <!-- RO2 -->
+            <div class="relative">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓄ➁</h4>
+                <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
+                  To redesign and formulate approaches (ecopedagogy) training
+                  the perspectives of a designer.
+                </p>
+              </div>
             </div>
-          </div>
-          <!-- RQ3 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓆ➂</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                What kind of potentialities of engagement arise, after human
-                re-enchantment, from queering the relationship with MOTH?
-              </p>
+            <!-- RO3 -->
+            <div class="relative">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓄ➂</h4>
+                <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
+                  To generate functional outcomes (like new ideas for
+                  conservation, shifts in attitude or motives for stewardship)
+                  at the personal and collective level of engagement with MOTH.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -142,69 +219,631 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- Research Objectives Section -->
-  <section class="px-6 lg:px-24 py-12 lg:py-16">
+  <!-- Mobile Fixed Navigation for Methodology -->
+  <div
+    id="methodology-mobile-nav"
+    class="fixed top-14 left-0 right-0 z-40 bg-charcoal text-cream py-3 px-6 shadow-sm lg:hidden opacity-0 pointer-events-none transition-opacity duration-300"
+  >
+    <h3
+      class="methodology-mobile-nav-item font-black text-xl leading-[1.1] mb-0.5 transition-opacity duration-300"
+      data-target="section-methodology"
+    >
+      Methodology
+    </h3>
+    <h3
+      class="methodology-mobile-nav-item font-black text-xl leading-[1.1] opacity-30 transition-opacity duration-300"
+      data-target="section-output"
+    >
+      Output
+    </h3>
+  </div>
+
+  <!-- Methodology/Output Container - Dark Background -->
+  <section
+    class="methodology-container bg-charcoal text-cream px-6 lg:px-24 pt-16 lg:pt-24 pb-32 lg:pb-36 relative -mb-24 lg:-mb-28"
+  >
     <div class="flex flex-col lg:flex-row gap-8 lg:gap-24">
-      <div class="lg:w-1/3">
-        <h3
-          class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2 opacity-20"
-        >
-          Research Problem
-        </h3>
-        <h3
-          class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2 opacity-20"
-        >
-          Research Question
-        </h3>
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1]">
-          Research Objectives
-        </h3>
+      <!-- Desktop Sticky Sidebar -->
+      <div class="lg:w-1/3 methodology-sidebar">
+        <div class="hidden lg:block lg:sticky lg:top-24">
+          <h3
+            id="nav-methodology"
+            class="methodology-nav-item font-black text-[60px] leading-[1.1] mb-2 transition-opacity duration-300"
+            data-target="section-methodology"
+          >
+            Methodology
+          </h3>
+          <h3
+            id="nav-output"
+            class="methodology-nav-item font-black text-[60px] leading-[1.1] opacity-30 transition-opacity duration-300"
+            data-target="section-output"
+          >
+            Output
+          </h3>
+        </div>
       </div>
+
+      <!-- Scrolling Content -->
       <div class="lg:w-2/3">
-        <!-- Research Objectives Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- RO1 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
-            >
+        <!-- Methodology Content -->
+        <div
+          id="section-methodology"
+          class="methodology-section mb-24 lg:mb-40"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- M1 with Slider -->
+            <div class="relative methodology-card" data-card="m1">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓜ➀</h4>
+                <p
+                  class="text-lg lg:text-[25px] leading-[1.2] font-semibold mb-4"
+                >
+                  "critical training in empathetic relational imagination"
+                </p>
+                <!-- Slides Container -->
+                <div class="methodology-slides" data-slides="m1">
+                  <div class="methodology-slide active" data-slide="0">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      1. training through gestures, dances, music coming from
+                      mediterranean ancestral "continuum" community (open to
+                      other convenings from more than design radical pedagogies
+                      and epistemologies)
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="1">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      2. doing means following the teachings of an established
+                      mentor from the community, happening mostly in residential
+                      workshops with transfer of embodied knowledge
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="2">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      3. I'll keep a multimedia diary extended with direct
+                      contributions from the mentors and other participants
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="3">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      4. I'll study with psychologists and neuroscientists (who
+                      work on group awareness and regulation) and start
+                      developing a measuring system to be tested on myself and
+                      the other participants
+                    </p>
+                  </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex items-center gap-3 mt-4">
+                  <button
+                    class="methodology-prev opacity-30 pointer-events-none"
+                    data-prev="m1"
+                    aria-label="Precedente"
+                  >
+                    <svg
+                      class="w-4 h-4 rotate-180"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="flex items-center gap-1 methodology-dots"
+                    data-dots="m1"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current transition-opacity"
+                      data-dot="0"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="1"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="2"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="3"></span>
+                  </div>
+                  <button
+                    class="methodology-next"
+                    data-next="m1"
+                    aria-label="Successivo"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓄ➀</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                To select and analyze practices coming from Mediterranean
-                ancestral "continuum" communities, figuring out ways to learn
-                how their effects and affects can be measured
-              </p>
+
+            <!-- M2 with Slider -->
+            <div class="relative methodology-card" data-card="m2">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓜ➁</h4>
+                <p
+                  class="text-lg lg:text-[25px] leading-[1.2] font-semibold mb-4"
+                >
+                  "against extinction of experience"
+                </p>
+                <!-- Slides Container -->
+                <div class="methodology-slides" data-slides="m2">
+                  <div class="methodology-slide active" data-slide="0">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      1. workshops in design institution inspired from practices
+                      studied (sub1)
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="1">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      2. engaging in testing and measuring
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="2">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      3. running an international platform/case study where
+                      through critical training designers start a research
+                      process of engagement with local MOTH instances
+                    </p>
+                  </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex items-center gap-3 mt-4">
+                  <button
+                    class="methodology-prev opacity-30 pointer-events-none"
+                    data-prev="m2"
+                    aria-label="Precedente"
+                  >
+                    <svg
+                      class="w-4 h-4 rotate-180"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="flex items-center gap-1 methodology-dots"
+                    data-dots="m2"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current transition-opacity"
+                      data-dot="0"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="1"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="2"></span>
+                  </div>
+                  <button
+                    class="methodology-next"
+                    data-next="m2"
+                    aria-label="Successivo"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- M3 with Slider -->
+            <div class="relative methodology-card" data-card="m3">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓜ➂</h4>
+                <p
+                  class="text-lg lg:text-[25px] leading-[1.2] font-semibold mb-4"
+                >
+                  "venturing beyond the bifurcation of nature"
+                </p>
+                <!-- Slides Container -->
+                <div class="methodology-slides" data-slides="m3">
+                  <div class="methodology-slide active" data-slide="0">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      1. collaborate with related experiences of MOTH
+                      representation
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="1">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      2. select one Mediterranean MOTH instance to be engaged
+                      with (based on familiarity and relevance)
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="2">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      3. organise a situated study (residential platform) where
+                      participants from "civic society" develop their critical
+                      relationship with our specific MOTH counterpart through
+                      our syllabus
+                    </p>
+                  </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex items-center gap-3 mt-4">
+                  <button
+                    class="methodology-prev opacity-30 pointer-events-none"
+                    data-prev="m3"
+                    aria-label="Precedente"
+                  >
+                    <svg
+                      class="w-4 h-4 rotate-180"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="flex items-center gap-1 methodology-dots"
+                    data-dots="m3"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current transition-opacity"
+                      data-dot="0"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="1"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="2"></span>
+                  </div>
+                  <button
+                    class="methodology-next"
+                    data-next="m3"
+                    aria-label="Successivo"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- RO2 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
-            >
+        </div>
+
+        <!-- Output Content -->
+        <div id="section-output" class="methodology-section">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- O1 with Slider -->
+            <div class="relative methodology-card" data-card="o1">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓞ➀</h4>
+                <!-- Slides Container -->
+                <div class="methodology-slides" data-slides="o1">
+                  <div class="methodology-slide active" data-slide="0">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      1. knowledge platform and community: new
+                      "interaction/connections" with a reviewed goal (MOTH
+                      participation)
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="1">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      2. awareness about the practices and dynamics at play, and
+                      some insights on how to possibly measure
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="2">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      3. curated repertoire to be further tested
+                    </p>
+                  </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex items-center gap-3 mt-4">
+                  <button
+                    class="methodology-prev opacity-30 pointer-events-none"
+                    data-prev="o1"
+                    aria-label="Precedente"
+                  >
+                    <svg
+                      class="w-4 h-4 rotate-180"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="flex items-center gap-1 methodology-dots"
+                    data-dots="o1"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current transition-opacity"
+                      data-dot="0"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="1"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="2"></span>
+                  </div>
+                  <button
+                    class="methodology-next"
+                    data-next="o1"
+                    aria-label="Successivo"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓄ➁</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                To redesign and formulate approaches (ecopedagogy) training the
-                perspectives of a designer.
-              </p>
+
+            <!-- O2 with Slider -->
+            <div class="relative methodology-card" data-card="o2">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓞ➁</h4>
+                <!-- Slides Container -->
+                <div class="methodology-slides" data-slides="o2">
+                  <div class="methodology-slide active" data-slide="0">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      1. a curated syllabus with a framework to measure its
+                      efficacy
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="1">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      2. international experience of critical engagement and
+                      knowledge production
+                    </p>
+                  </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex items-center gap-3 mt-4">
+                  <button
+                    class="methodology-prev opacity-30 pointer-events-none"
+                    data-prev="o2"
+                    aria-label="Precedente"
+                  >
+                    <svg
+                      class="w-4 h-4 rotate-180"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="flex items-center gap-1 methodology-dots"
+                    data-dots="o2"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current transition-opacity"
+                      data-dot="0"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="1"></span>
+                  </div>
+                  <button
+                    class="methodology-next"
+                    data-next="o2"
+                    aria-label="Successivo"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-          <!-- RO3 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">ⓇⓄ➂</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                To generate functional outcomes (like new ideas for
-                conservation, shifts in attitude or motives for stewardship) at
-                the personal and collective level of engagement with MOTH.
-              </p>
+
+            <!-- O3 with Slider -->
+            <div class="relative methodology-card" data-card="o3">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
+              >
+              </div>
+              <div class="pl-6">
+                <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓞ➂</h4>
+                <!-- Slides Container -->
+                <div class="methodology-slides" data-slides="o3">
+                  <div class="methodology-slide active" data-slide="0">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      1. opening up possibilities for
+                      "self-social-eco-realisation" (creation of new
+                      relationship)
+                    </p>
+                  </div>
+                  <div class="methodology-slide" data-slide="1">
+                    <p
+                      class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
+                    >
+                      2. experiment with RoN and MOTH representation in the
+                      Mediterranean
+                    </p>
+                  </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex items-center gap-3 mt-4">
+                  <button
+                    class="methodology-prev opacity-30 pointer-events-none"
+                    data-prev="o3"
+                    aria-label="Precedente"
+                  >
+                    <svg
+                      class="w-4 h-4 rotate-180"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="flex items-center gap-1 methodology-dots"
+                    data-dots="o3"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current transition-opacity"
+                      data-dot="0"></span>
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-current opacity-30 transition-opacity"
+                      data-dot="1"></span>
+                  </div>
+                  <button
+                    class="methodology-next"
+                    data-next="o3"
+                    aria-label="Successivo"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 10H16M16 10L10 4M16 10L10 16"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -212,147 +851,336 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- Methodology Section - Dark Background -->
-  <section class="bg-charcoal text-cream px-6 lg:px-24 py-16 lg:py-24">
-    <div class="flex flex-col lg:flex-row gap-8 lg:gap-24">
-      <div class="lg:w-1/3">
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2">
-          Methodology
-        </h3>
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1] opacity-30">
-          Output
-        </h3>
-      </div>
-      <div class="lg:w-2/3">
-        <!-- Methodology Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- M1 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓜ➀</h4>
-              <p
-                class="text-lg lg:text-[25px] leading-[1.2] font-semibold mb-4"
-              >
-                "critical training in empathetic relational imagination"
-              </p>
-              <p
-                class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
-              >
-                1. training through gestures, dances, music coming from
-                mediterranean ancestral "continuum" community (open to other
-                convenings from more than design radical pedagogies and
-                epistemologies)
-              </p>
-            </div>
-          </div>
-          <!-- M2 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓜ➁</h4>
-              <p
-                class="text-lg lg:text-[25px] leading-[1.2] font-semibold mb-4"
-              >
-                "against extinction of experience"
-              </p>
-              <p
-                class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
-              >
-                1. workshops in design institution inspired from practices
-                studied (sub1)
-              </p>
-            </div>
-          </div>
-          <!-- M3 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓜ➂</h4>
-              <p
-                class="text-lg lg:text-[25px] leading-[1.2] font-semibold mb-4"
-              >
-                "venturing beyond the bifurcation of nature"
-              </p>
-              <p
-                class="text-sm lg:text-[18px] leading-[1.4] font-semibold opacity-80"
-              >
-                1. collaborate with related experiences of MOTH representation
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script>
+    // Mobile navigation elements
+    const researchMobileNav = document.getElementById("research-mobile-nav");
+    const methodologyMobileNav = document.getElementById(
+      "methodology-mobile-nav"
+    );
+    const researchMobileNavItems = document.querySelectorAll(
+      ".research-mobile-nav-item"
+    );
+    const methodologyMobileNavItems = document.querySelectorAll(
+      ".methodology-mobile-nav-item"
+    );
 
-  <!-- Output Section - Dark Background -->
-  <section class="bg-charcoal text-cream px-6 lg:px-24 py-16 lg:py-24 pb-32">
-    <div class="flex flex-col lg:flex-row gap-8 lg:gap-24">
-      <div class="lg:w-1/3">
-        <h3
-          class="font-black text-4xl lg:text-[60px] leading-[1.1] mb-2 opacity-30"
-        >
-          Methodology
-        </h3>
-        <h3 class="font-black text-4xl lg:text-[60px] leading-[1.1]">Output</h3>
-      </div>
-      <div class="lg:w-2/3">
-        <!-- Output Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- O1 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓞ➀</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                1.knowledge: i.e. new interrelation/connection and platform for
-                a community and practice
-              </p>
-            </div>
-          </div>
-          <!-- O2 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓞ➁</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                reviewed goal and participation: connection and platform for a
-                community and practice
-              </p>
-            </div>
-          </div>
-          <!-- O3 -->
-          <div class="relative">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-400 to-transparent"
-            >
-            </div>
-            <div class="pl-6">
-              <h4 class="font-black text-4xl lg:text-[60px] mb-4">Ⓞ➂</h4>
-              <p class="text-lg lg:text-[25px] leading-[1.2] font-semibold">
-                : new interaction/ connection and platform for a community and
-                practice
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    // Research container for visibility check
+    const researchContainer = document.querySelector(
+      ".research-container"
+    ) as HTMLElement;
+    const methodologyContainer = document.querySelector(
+      ".methodology-container"
+    ) as HTMLElement;
+
+    // Intersection Observer for Research sections
+    const researchSections = document.querySelectorAll(".research-section");
+    const researchNavItems = document.querySelectorAll(".research-nav-item");
+
+    const researchObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+
+            // Update desktop nav items
+            researchNavItems.forEach((navItem) => {
+              const targetSection = navItem.getAttribute("data-target");
+              if (targetSection === sectionId) {
+                navItem.classList.remove("opacity-20");
+              } else {
+                navItem.classList.add("opacity-20");
+              }
+            });
+
+            // Update mobile nav items
+            researchMobileNavItems.forEach((navItem) => {
+              const targetSection = navItem.getAttribute("data-target");
+              if (targetSection === sectionId) {
+                navItem.classList.remove("opacity-20");
+              } else {
+                navItem.classList.add("opacity-20");
+              }
+            });
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    researchSections.forEach((section) => {
+      researchObserver.observe(section);
+    });
+
+    // Intersection Observer for Methodology/Output sections
+    const methodologySections = document.querySelectorAll(
+      ".methodology-section"
+    );
+    const methodologyNavItems = document.querySelectorAll(
+      ".methodology-nav-item"
+    );
+
+    const methodologyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+
+            // Update desktop nav items
+            methodologyNavItems.forEach((navItem) => {
+              const targetSection = navItem.getAttribute("data-target");
+              if (targetSection === sectionId) {
+                navItem.classList.remove("opacity-30");
+              } else {
+                navItem.classList.add("opacity-30");
+              }
+            });
+
+            // Update mobile nav items
+            methodologyMobileNavItems.forEach((navItem) => {
+              const targetSection = navItem.getAttribute("data-target");
+              if (targetSection === sectionId) {
+                navItem.classList.remove("opacity-30");
+              } else {
+                navItem.classList.add("opacity-30");
+              }
+            });
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    methodologySections.forEach((section) => {
+      methodologyObserver.observe(section);
+    });
+
+    // Show/hide mobile navigation based on scroll position
+    function updateMobileNavVisibility() {
+      if (window.innerWidth >= 1024) return; // Only on mobile
+
+      const researchRect = researchContainer?.getBoundingClientRect();
+      const methodologyRect = methodologyContainer?.getBoundingClientRect();
+      const headerHeight = 56; // header height (top-14 = 3.5rem)
+      const navHeight = headerHeight + 80; // header + mobile nav height
+
+      // Show research nav when in research section
+      if (
+        researchRect &&
+        researchRect.top < navHeight &&
+        researchRect.bottom > navHeight
+      ) {
+        researchMobileNav?.classList.remove("opacity-0", "pointer-events-none");
+        researchMobileNav?.classList.add("opacity-100");
+      } else {
+        researchMobileNav?.classList.add("opacity-0", "pointer-events-none");
+        researchMobileNav?.classList.remove("opacity-100");
+      }
+
+      // Show methodology nav when in methodology section
+      if (
+        methodologyRect &&
+        methodologyRect.top < navHeight &&
+        methodologyRect.bottom > navHeight
+      ) {
+        methodologyMobileNav?.classList.remove(
+          "opacity-0",
+          "pointer-events-none"
+        );
+        methodologyMobileNav?.classList.add("opacity-100");
+      } else {
+        methodologyMobileNav?.classList.add("opacity-0", "pointer-events-none");
+        methodologyMobileNav?.classList.remove("opacity-100");
+      }
+    }
+
+    window.addEventListener("scroll", updateMobileNavVisibility, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateMobileNavVisibility);
+    updateMobileNavVisibility();
+
+    // Click navigation for desktop
+    researchNavItems.forEach((navItem) => {
+      const el = navItem as HTMLElement;
+      el.addEventListener("click", () => {
+        const targetId = el.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId || "");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      el.style.cursor = "pointer";
+    });
+
+    methodologyNavItems.forEach((navItem) => {
+      const el = navItem as HTMLElement;
+      el.addEventListener("click", () => {
+        const targetId = el.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId || "");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      el.style.cursor = "pointer";
+    });
+
+    // Click navigation for mobile
+    researchMobileNavItems.forEach((navItem) => {
+      const el = navItem as HTMLElement;
+      el.addEventListener("click", () => {
+        const targetId = el.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId || "");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      el.style.cursor = "pointer";
+    });
+
+    methodologyMobileNavItems.forEach((navItem) => {
+      const el = navItem as HTMLElement;
+      el.addEventListener("click", () => {
+        const targetId = el.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId || "");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      el.style.cursor = "pointer";
+    });
+
+    // Methodology & Output Sliders
+    const sliderState: Record<string, number> = {
+      m1: 0,
+      m2: 0,
+      m3: 0,
+      o1: 0,
+      o2: 0,
+      o3: 0,
+    };
+    const slideCounts: Record<string, number> = {
+      m1: 4,
+      m2: 3,
+      m3: 3,
+      o1: 3,
+      o2: 2,
+      o3: 2,
+    };
+
+    function updateSlider(cardId: string) {
+      const current = sliderState[cardId];
+      const total = slideCounts[cardId];
+
+      // Update slides
+      const slides = document.querySelectorAll(
+        `[data-slides="${cardId}"] .methodology-slide`
+      );
+      slides.forEach((slide, i) => {
+        if (i === current) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active");
+        }
+      });
+
+      // Update dots
+      const dots = document.querySelectorAll(`[data-dots="${cardId}"] span`);
+      dots.forEach((dot, i) => {
+        if (i === current) {
+          (dot as HTMLElement).style.opacity = "1";
+        } else {
+          (dot as HTMLElement).style.opacity = "0.3";
+        }
+      });
+
+      // Update prev button
+      const prevBtn = document.querySelector(
+        `[data-prev="${cardId}"]`
+      ) as HTMLElement;
+      if (prevBtn) {
+        if (current <= 0) {
+          prevBtn.classList.add("opacity-30", "pointer-events-none");
+        } else {
+          prevBtn.classList.remove("opacity-30", "pointer-events-none");
+        }
+      }
+
+      // Update next button
+      const nextBtn = document.querySelector(
+        `[data-next="${cardId}"]`
+      ) as HTMLElement;
+      if (nextBtn) {
+        if (current >= total - 1) {
+          nextBtn.classList.add("opacity-30", "pointer-events-none");
+        } else {
+          nextBtn.classList.remove("opacity-30", "pointer-events-none");
+        }
+      }
+    }
+
+    // Add event listeners for prev/next buttons
+    document.querySelectorAll(".methodology-prev").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cardId = btn.getAttribute("data-prev");
+        if (cardId && sliderState[cardId] > 0) {
+          sliderState[cardId]--;
+          updateSlider(cardId);
+        }
+      });
+    });
+
+    document.querySelectorAll(".methodology-next").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cardId = btn.getAttribute("data-next");
+        if (cardId && sliderState[cardId] < slideCounts[cardId] - 1) {
+          sliderState[cardId]++;
+          updateSlider(cardId);
+        }
+      });
+    });
+
+    // Initialize sliders
+    Object.keys(sliderState).forEach((cardId) => {
+      updateSlider(cardId);
+    });
+  </script>
+
+  <style>
+    .methodology-slide {
+      display: none;
+      animation: fadeSlide 0.3s ease-out;
+    }
+
+    .methodology-slide.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateX(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .methodology-prev,
+    .methodology-next {
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .methodology-prev:hover,
+    .methodology-next:hover {
+      opacity: 0.7;
+    }
+  </style>
 </Layout>

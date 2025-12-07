@@ -1,10 +1,19 @@
 ---
+interface Props {
+  staticPosition?: boolean;
+}
+
+const { staticPosition = false } = Astro.props;
+
 // Marquee footer with repeating text
 const text = "design for the continuum: can we speak with the more-than-human?";
 ---
 
 <footer
-  class="fixed bottom-0 left-0 right-0 z-40 bg-charcoal text-cream overflow-hidden"
+  class:list={[
+    staticPosition ? "relative" : "fixed bottom-0 left-0 right-0",
+    "z-40 bg-charcoal text-cream overflow-hidden",
+  ]}
 >
   <div class="h-24 lg:h-[100px] flex items-center">
     <div class="marquee-animation whitespace-nowrap flex">
@@ -22,7 +31,7 @@ const text = "design for the continuum: can we speak with the more-than-human?";
 
 <style>
   .marquee-animation {
-    animation: marquee 25s linear infinite;
+    animation: marquee 40s linear infinite;
   }
 
   @keyframes marquee {
