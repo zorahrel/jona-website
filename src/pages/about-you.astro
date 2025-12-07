@@ -152,7 +152,179 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </section>
+
+  <!-- Feedback Notification -->
+  <div id="feedback-notification" class="feedback-notification hidden">
+    <div class="feedback-content">
+      <div class="feedback-icon">
+        <svg
+          id="feedback-icon-svg"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <!-- Success icon (checkmark) -->
+          <path
+            id="success-icon"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"></path>
+          <!-- Error icon (X) -->
+          <path
+            id="error-icon"
+            class="hidden"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </div>
+      <div class="feedback-message">
+        <p id="feedback-text" class="font-semibold"></p>
+      </div>
+      <button
+        id="feedback-close"
+        class="feedback-close"
+        aria-label="Close notification"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .feedback-notification {
+    position: fixed;
+    top: 100px;
+    right: 24px;
+    z-index: 1000;
+    max-width: 400px;
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  .feedback-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border: 2px solid var(--color-charcoal);
+    border-radius: 12px;
+    background: var(--color-cream);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .feedback-notification.success .feedback-content {
+    border-color: var(--color-pink);
+    background: var(--color-cream);
+  }
+
+  .feedback-notification.error .feedback-content {
+    border-color: #ef4444;
+    background: var(--color-cream);
+  }
+
+  .feedback-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .feedback-notification.success .feedback-icon {
+    background: var(--color-pink);
+    color: white;
+  }
+
+  .feedback-notification.error .feedback-icon {
+    background: #ef4444;
+    color: white;
+  }
+
+  .feedback-message {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .feedback-message p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-charcoal);
+  }
+
+  .feedback-close {
+    flex-shrink: 0;
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-charcoal);
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feedback-close:hover {
+    opacity: 1;
+  }
+
+  .feedback-notification.hidden {
+    display: none;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .feedback-notification.closing {
+    animation: slideOutRight 0.3s ease-out forwards;
+  }
+
+  @media (max-width: 640px) {
+    .feedback-notification {
+      right: 16px;
+      left: 16px;
+      max-width: none;
+    }
+  }
+</style>
 
 <script>
   interface FormSubmission {
@@ -167,6 +339,61 @@ import Layout from "../layouts/Layout.astro";
       data: string; // base64
     }>;
     timestamp: number;
+  }
+
+  // Feedback notification functions
+  function showFeedback(message: string, type: "success" | "error") {
+    const notification = document.getElementById("feedback-notification");
+    const feedbackText = document.getElementById("feedback-text");
+    const successIcon = document.getElementById("success-icon");
+    const errorIcon = document.getElementById("error-icon");
+
+    if (!notification || !feedbackText || !successIcon || !errorIcon) return;
+
+    // Set message
+    feedbackText.textContent = message;
+
+    // Set type and icon
+    notification.className = `feedback-notification ${type}`;
+    if (type === "success") {
+      successIcon.classList.remove("hidden");
+      errorIcon.classList.add("hidden");
+    } else {
+      successIcon.classList.add("hidden");
+      errorIcon.classList.remove("hidden");
+    }
+
+    // Show notification
+    notification.classList.remove("hidden", "closing");
+
+    // Auto-hide after 5 seconds
+    const autoHideTimeout = setTimeout(() => {
+      hideFeedback();
+    }, 5000);
+
+    // Close button handler
+    const closeBtn = document.getElementById("feedback-close");
+    if (closeBtn) {
+      // Remove existing listeners by cloning
+      const newCloseBtn = closeBtn.cloneNode(true);
+      closeBtn.parentNode?.replaceChild(newCloseBtn, closeBtn);
+
+      newCloseBtn.addEventListener("click", () => {
+        clearTimeout(autoHideTimeout);
+        hideFeedback();
+      });
+    }
+  }
+
+  function hideFeedback() {
+    const notification = document.getElementById("feedback-notification");
+    if (!notification) return;
+
+    notification.classList.add("closing");
+    setTimeout(() => {
+      notification.classList.add("hidden");
+      notification.classList.remove("closing");
+    }, 300);
   }
 
   // File handling
@@ -244,7 +471,7 @@ import Layout from "../layouts/Layout.astro";
     const email = formData.get("email") as string;
 
     if (!email || !email.trim()) {
-      alert("Email is required to send the form.");
+      showFeedback("Email is required to send the form.", "error");
       return;
     }
 
@@ -320,12 +547,14 @@ import Layout from "../layouts/Layout.astro";
       displayFilePreview();
 
       // Show success message
-      alert("Thank you! Your message has been sent.");
+      showFeedback("Thank you! Your message has been sent.", "success");
     } catch (error) {
       console.error("Error sending email:", error);
-      alert(
-        "Sorry, there was an error sending your message. Please try again later."
-      );
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "Sorry, there was an error sending your message. Please try again later.";
+      showFeedback(errorMessage, "error");
     } finally {
       // Re-enable submit button
       if (submitButton) {
