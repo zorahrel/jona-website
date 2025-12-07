@@ -1,0 +1,464 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About You - Design for the Continuum" activePage="abstract">
+  <!-- Thank You Message Section -->
+  <section class="px-6 lg:px-24 py-12 lg:py-20">
+    <div class="max-w-[1100px]">
+      <h1 class="font-black text-3xl lg:text-[50px] leading-[1.15] mb-12">
+        about you
+      </h1>
+      <p
+        class="text-xl lg:text-[32px] leading-[1.2] font-semibold mb-12 lg:mb-16"
+      >
+        Hey I'm happy you are here and can't wait to connect and share the world
+        with you!
+      </p>
+      <p class="text-xl lg:text-[32px] leading-[1.2] font-semibold">
+        Your presence and contribution enriches this space!
+      </p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="px-6 lg:px-24 py-8 lg:py-12">
+    <div class="max-w-[1000px] lg:ml-[200px]">
+      <form id="contact-form" class="space-y-6">
+        <!-- Name Field -->
+        <div>
+          <label
+            for="name"
+            class="block text-base lg:text-[20px] font-semibold mb-2"
+          >
+            name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base focus:outline-none focus:border-pink bg-white"
+            placeholder="Your name"
+          />
+        </div>
+
+        <!-- Place Field -->
+        <div>
+          <label
+            for="place"
+            class="block text-base lg:text-[20px] font-semibold mb-2"
+          >
+            place
+          </label>
+          <input
+            type="text"
+            id="place"
+            name="place"
+            class="w-full px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base focus:outline-none focus:border-pink bg-white"
+            placeholder="Where are you writing from?"
+          />
+        </div>
+
+        <!-- Message Text Box -->
+        <div>
+          <label
+            for="message"
+            class="block text-base lg:text-[20px] font-semibold mb-2"
+          >
+            message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            class="w-full px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base focus:outline-none focus:border-pink bg-white resize-y"
+            placeholder="Your message..."></textarea>
+        </div>
+
+        <!-- Multimedia Box -->
+        <div>
+          <label
+            for="multimedia"
+            class="block text-base lg:text-[20px] font-semibold mb-2"
+          >
+            multimedia
+          </label>
+          <div class="border-2 border-charcoal rounded-lg p-4 bg-white">
+            <input
+              type="file"
+              id="multimedia"
+              name="multimedia"
+              accept="image/*,.pdf"
+              multiple
+              class="hidden"
+            />
+            <div class="flex flex-col gap-4">
+              <button
+                type="button"
+                id="file-button"
+                class="px-6 py-3 border-2 border-charcoal rounded-lg font-semibold text-base hover:bg-charcoal hover:text-cream transition-colors cursor-pointer text-left"
+              >
+                Select PDFs or Images
+              </button>
+              <div id="file-preview" class="space-y-2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Field (Mandatory) -->
+        <div>
+          <label
+            for="email"
+            class="block text-base lg:text-[20px] font-semibold mb-2"
+          >
+            email <span class="text-pink">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 border-2 border-charcoal rounded-lg font-semibold text-base focus:outline-none focus:border-pink bg-white"
+            placeholder="your.email@example.com"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button
+            type="submit"
+            class="px-8 py-3 bg-charcoal text-cream font-semibold rounded-lg hover:bg-pink transition-colors text-base lg:text-lg"
+          >
+            send
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Public Messages Window -->
+  <section
+    class="px-6 lg:px-24 py-12 lg:py-20 border-t-2 border-charcoal/20 mt-12"
+  >
+    <div class="max-w-[1000px] lg:ml-[200px]">
+      <h2 class="font-black text-3xl lg:text-[40px] leading-[1.15] mb-8">
+        public window of messages
+      </h2>
+      <div id="messages-container" class="space-y-6">
+        <!-- Messages will be displayed here -->
+      </div>
+      <div id="no-messages" class="text-lg font-semibold opacity-50 py-8">
+        No messages yet. Be the first to share!
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  interface FormSubmission {
+    id: string;
+    name: string;
+    place: string;
+    message: string;
+    email: string;
+    files: Array<{
+      name: string;
+      type: string;
+      data: string; // base64
+    }>;
+    timestamp: number;
+  }
+
+  // File handling
+  const fileInput = document.getElementById("multimedia") as HTMLInputElement;
+  const fileButton = document.getElementById("file-button");
+  const filePreview = document.getElementById("file-preview");
+  let selectedFiles: File[] = [];
+
+  fileButton?.addEventListener("click", () => {
+    fileInput?.click();
+  });
+
+  fileInput?.addEventListener("change", (e) => {
+    const target = e.target as HTMLInputElement;
+    if (target.files) {
+      selectedFiles = Array.from(target.files);
+      displayFilePreview();
+    }
+  });
+
+  function displayFilePreview() {
+    if (!filePreview) return;
+
+    filePreview.innerHTML = "";
+
+    selectedFiles.forEach((file, index) => {
+      const fileItem = document.createElement("div");
+      fileItem.className =
+        "flex items-center justify-between p-2 bg-cream rounded border border-charcoal/20";
+
+      const fileInfo = document.createElement("div");
+      fileInfo.className = "flex items-center gap-2";
+
+      const fileName = document.createElement("span");
+      fileName.className = "text-sm font-semibold";
+      fileName.textContent = file.name;
+
+      const fileSize = document.createElement("span");
+      fileSize.className = "text-xs opacity-60";
+      fileSize.textContent = `(${(file.size / 1024).toFixed(1)} KB)`;
+
+      fileInfo.appendChild(fileName);
+      fileInfo.appendChild(fileSize);
+
+      const removeBtn = document.createElement("button");
+      removeBtn.className =
+        "text-pink hover:text-charcoal text-sm font-semibold";
+      removeBtn.textContent = "Remove";
+      removeBtn.type = "button";
+      removeBtn.addEventListener("click", () => {
+        selectedFiles.splice(index, 1);
+        displayFilePreview();
+        // Update file input
+        const dataTransfer = new DataTransfer();
+        selectedFiles.forEach((f) => dataTransfer.items.add(f));
+        fileInput.files = dataTransfer.files;
+      });
+
+      fileItem.appendChild(fileInfo);
+      fileItem.appendChild(removeBtn);
+      filePreview.appendChild(fileItem);
+    });
+  }
+
+  // Form submission
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const submitButton = form?.querySelector(
+    'button[type="submit"]'
+  ) as HTMLButtonElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const email = formData.get("email") as string;
+
+    if (!email || !email.trim()) {
+      alert("Email is required to send the form.");
+      return;
+    }
+
+    // Disable submit button and show loading state
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    // Convert files to base64
+    const filesData: Array<{ name: string; type: string; data: string }> = [];
+
+    for (const file of selectedFiles) {
+      try {
+        const base64 = await fileToBase64(file);
+        filesData.push({
+          name: file.name,
+          type: file.type,
+          data: base64,
+        });
+      } catch (error) {
+        console.error("Error converting file:", error);
+      }
+    }
+
+    const submission: FormSubmission = {
+      id: Date.now().toString(),
+      name: (formData.get("name") as string) || "",
+      place: (formData.get("place") as string) || "",
+      message: (formData.get("message") as string) || "",
+      email: email.trim(),
+      files: filesData,
+      timestamp: Date.now(),
+    };
+
+    try {
+      // Send email via API
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submission),
+      });
+
+      if (!response.ok) {
+        let errorMessage = "Failed to send email";
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorMessage;
+        } catch {
+          errorMessage = `Server error: ${response.status} ${response.statusText}`;
+        }
+        throw new Error(errorMessage);
+      }
+
+      const result = await response.json();
+
+      // Save to localStorage for public display
+      const existingSubmissions = getSubmissions();
+      existingSubmissions.push(submission);
+      localStorage.setItem(
+        "about-you-submissions",
+        JSON.stringify(existingSubmissions)
+      );
+
+      // Display the new submission
+      displaySubmissions();
+
+      // Reset form
+      form.reset();
+      selectedFiles = [];
+      displayFilePreview();
+
+      // Show success message
+      alert("Thank you! Your message has been sent.");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert(
+        "Sorry, there was an error sending your message. Please try again later."
+      );
+    } finally {
+      // Re-enable submit button
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "send";
+      }
+    }
+  });
+
+  function fileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result as string;
+        resolve(result);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function getSubmissions(): FormSubmission[] {
+    const stored = localStorage.getItem("about-you-submissions");
+    return stored ? JSON.parse(stored) : [];
+  }
+
+  function displaySubmissions() {
+    const container = document.getElementById("messages-container");
+    const noMessages = document.getElementById("no-messages");
+    const submissions = getSubmissions();
+
+    if (!container || !noMessages) return;
+
+    if (submissions.length === 0) {
+      container.innerHTML = "";
+      noMessages.style.display = "block";
+      return;
+    }
+
+    noMessages.style.display = "none";
+    container.innerHTML = "";
+
+    // Display in reverse order (newest first)
+    submissions.reverse().forEach((submission) => {
+      const messageCard = document.createElement("div");
+      messageCard.className =
+        "border-2 border-charcoal/30 rounded-lg p-6 bg-cream/50";
+
+      const header = document.createElement("div");
+      header.className =
+        "flex flex-wrap items-baseline gap-2 mb-4 pb-4 border-b border-charcoal/20";
+
+      if (submission.name) {
+        const nameEl = document.createElement("span");
+        nameEl.className = "font-black text-lg lg:text-xl";
+        nameEl.textContent = submission.name;
+        header.appendChild(nameEl);
+      }
+
+      if (submission.place) {
+        const placeEl = document.createElement("span");
+        placeEl.className = "text-sm lg:text-base font-semibold opacity-70";
+        placeEl.textContent = `from ${submission.place}`;
+        header.appendChild(placeEl);
+      }
+
+      const dateEl = document.createElement("span");
+      dateEl.className = "text-xs opacity-50 ml-auto";
+      dateEl.textContent = new Date(submission.timestamp).toLocaleDateString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        }
+      );
+      header.appendChild(dateEl);
+
+      if (submission.message) {
+        const messageEl = document.createElement("p");
+        messageEl.className =
+          "text-base lg:text-lg font-semibold leading-relaxed mb-4 whitespace-pre-wrap";
+        messageEl.textContent = submission.message;
+        messageCard.appendChild(messageEl);
+      }
+
+      if (submission.files && submission.files.length > 0) {
+        const filesContainer = document.createElement("div");
+        filesContainer.className = "space-y-3 mt-4";
+
+        submission.files.forEach((file) => {
+          const fileItem = document.createElement("div");
+          fileItem.className = "border border-charcoal/20 rounded p-3 bg-white";
+
+          if (file.type.startsWith("image/")) {
+            const img = document.createElement("img");
+            img.src = file.data;
+            img.alt = file.name;
+            img.className = "max-w-full h-auto rounded max-h-64 object-contain";
+            fileItem.appendChild(img);
+          } else if (file.type === "application/pdf") {
+            const pdfLink = document.createElement("a");
+            pdfLink.href = file.data;
+            pdfLink.target = "_blank";
+            pdfLink.className =
+              "text-pink hover:text-charcoal font-semibold flex items-center gap-2";
+            pdfLink.innerHTML = `
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+              ${file.name}
+            `;
+            fileItem.appendChild(pdfLink);
+          } else {
+            const fileName = document.createElement("span");
+            fileName.className = "text-sm font-semibold";
+            fileName.textContent = file.name;
+            fileItem.appendChild(fileName);
+          }
+
+          filesContainer.appendChild(fileItem);
+        });
+
+        messageCard.appendChild(filesContainer);
+      }
+
+      messageCard.insertBefore(header, messageCard.firstChild);
+      container.appendChild(messageCard);
+    });
+  }
+
+  // Load and display submissions on page load
+  displaySubmissions();
+</script>
