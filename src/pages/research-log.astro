@@ -129,6 +129,11 @@ const sections = [
     min-height: 0;
   }
 
+  /* When all curtains are closed, align handles to the right */
+  .curtains-container.all-closed {
+    justify-content: flex-end;
+  }
+
   /* ===== CURTAIN (each expandable section) ===== */
   .curtain {
     display: flex;
@@ -452,11 +457,29 @@ const sections = [
       // Open the selected one
       curtains[index].classList.add("open");
       handles[index].setAttribute("aria-expanded", "true");
+      updateContainerState();
     }
 
     function closeAll() {
       curtains.forEach((c) => c.classList.remove("open"));
       handles.forEach((h) => h.setAttribute("aria-expanded", "false"));
+      updateContainerState();
+    }
+
+    function updateContainerState() {
+      const container = document.querySelector<HTMLElement>(
+        ".curtains-container"
+      );
+      if (!container) return;
+
+      const hasOpen = Array.from(curtains).some((c) =>
+        c.classList.contains("open")
+      );
+      if (hasOpen) {
+        container.classList.remove("all-closed");
+      } else {
+        container.classList.add("all-closed");
+      }
     }
 
     // Click handlers
@@ -493,6 +516,9 @@ const sections = [
         if (prev !== openIndex) openCurtain(prev);
       }
     });
+
+    // Initialize container state
+    updateContainerState();
 
     // Open first curtain by default
     openCurtain(0);
