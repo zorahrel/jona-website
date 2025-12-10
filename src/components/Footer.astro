@@ -6,7 +6,8 @@ interface Props {
 const { staticPosition = false } = Astro.props;
 
 // Marquee footer with repeating text
-const text = "design for the continuum: can we speak with the more-than-human?";
+const text =
+  "Design for the continuum: can we speak with the more-than-human? Cuerpo-territorio + Tout-monde + Sentipensar + Cosmological perspectivism";
 ---
 
 <footer
@@ -15,7 +16,10 @@ const text = "design for the continuum: can we speak with the more-than-human?";
     "z-40 bg-charcoal text-cream overflow-hidden",
   ]}
 >
-  <div class="h-24 lg:h-[100px] flex items-center">
+  <div
+    class="footer-marquee flex items-center"
+    style="height: var(--bar-height, 52px); min-height: var(--bar-height, 52px);"
+  >
     <div class="marquee-animation whitespace-nowrap flex">
       <!-- Repeat text many times for seamless loop -->
       {
@@ -45,5 +49,10 @@ const text = "design for the continuum: can we speak with the more-than-human?";
 
   .marquee-animation:hover {
     animation-play-state: paused;
+  }
+
+  .footer-marquee {
+    height: var(--bar-height, 52px);
+    min-height: var(--bar-height, 52px);
   }
 </style>

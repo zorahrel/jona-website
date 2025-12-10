@@ -327,6 +327,54 @@ import Layout from "../layouts/Layout.astro";
         transparent 90%
       );
     background-color: #f5f0eb;
+    background-size: 180% 180%;
+    animation: continuumShift 10s ease-in-out infinite;
+    filter: blur(0px);
+    opacity: 0.9;
+    transform: translateZ(0);
+  }
+
+  @keyframes continuumShift {
+    0% {
+      background-position:
+        20% 30%,
+        60% 40%,
+        80% 70%,
+        40% 60%;
+      filter: blur(2px);
+    }
+    25% {
+      background-position:
+        40% 20%,
+        30% 60%,
+        70% 40%,
+        60% 80%;
+      filter: blur(3px);
+    }
+    50% {
+      background-position:
+        60% 50%,
+        50% 30%,
+        30% 70%,
+        80% 50%;
+      filter: blur(2px);
+    }
+    75% {
+      background-position:
+        30% 70%,
+        70% 50%,
+        50% 20%,
+        20% 40%;
+      filter: blur(3px);
+    }
+    100% {
+      background-position:
+        20% 30%,
+        60% 40%,
+        80% 70%,
+        40% 60%;
+      filter: blur(2px);
+    }
   }
 
   /* Accordion Styles */

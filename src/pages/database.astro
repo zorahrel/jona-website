@@ -1,221 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import databaseData from "../data/database.json";
 
-const databaseItems = [
-  {
-    title: "Interspecies Council",
-    description:
-      "Methodology to introduce more-than-human ontologies into decision-making and policy-making.",
-    link: "https://www.moralimaginations.com/interspecies-council",
-    type: "methodology",
-    year: 2021,
-    author: "Phoebe Tickell",
-  },
-  {
-    title: "Nawpa",
-    description:
-      "Political and spiritual philosophy of Kichwa community. Summak Kawsay.",
-    link: "https://vimeo.com/7785711?share=copy",
-    type: "video",
-    year: 2007,
-    author: "Xavier Hurtado",
-  },
-  {
-    title: "Venice Biennale Program",
-    description: "Art, sound, architecture for ocean futures.",
-    link: "https://tba21.org/biennale2025",
-    type: "event",
-    year: 2025,
-    author: "TBA21–Academy",
-  },
-  {
-    title: "Sensing the Climate",
-    description: "How do international policy makers 'sense' nature?",
-    link: "https://serramadre.art/evento/sensing-the-climate-how-do-international-policy-makers-sense-nature/",
-    type: "event",
-    year: 2025,
-    author: "Joanne Yao",
-  },
-  {
-    title: "The Mountain of Advanced Dreams",
-    description: "Design fiction exploring multispecies coexistence.",
-    link: "http://www.postmediabooks.it/2023/383maliweil/9788874903832.htm",
-    type: "book",
-    year: 2023,
-    author: "Mali Weil",
-  },
-  {
-    title: "On Behalf of Nature",
-    description: "Sonic meditation on connection to nature.",
-    link: "https://www.meredithmonk.org/repertory/on-behalf-of-nature-2",
-    type: "performance",
-    year: 2013,
-    author: "Meredith Monk",
-  },
-  {
-    title: "Assembly Performance",
-    description: "Participatory practice in the roots of democracy.",
-    link: "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/49172/MA%20Thesis_Dimitrios%20Kyriakos%20Machairidis_5235588.pdf",
-    type: "thesis",
-    year: 2025,
-    author: "D.K. Machairidis",
-  },
-  {
-    title: "More-Than-Human Political Communities",
-    description: "Anarchist political ecology, multispecies care.",
-    link: "https://journals.librarypublishing.arizona.edu/jpe/article/5942/galley/7272/view/",
-    type: "paper",
-    year: 2025,
-    author: "Various",
-  },
-  {
-    title: "Last Lamentation",
-    description: "Permeable boundary between body and space.",
-    link: "https://valentinamedda.com/",
-    type: "performer",
-    year: 2024,
-    author: "Valentina Medda",
-  },
-  {
-    title: "More Than Human Governance",
-    description: "Governance drawing on planetary intelligences.",
-    link: "https://www.demnext.org/projects/more-than-human-governance",
-    type: "research",
-    year: 2024,
-    author: "DemNext",
-  },
-  {
-    title: "Animismo Giuridico",
-    description: "Legal animism: rights of Pacha Mama.",
-    link: "https://theconversation.com/lanimisme-juridique-quand-un-fleuve-ou-la-nature-toute-entiere-livre-proces-214966",
-    type: "article",
-    year: 2023,
-    author: "The Conversation",
-  },
-  {
-    title: "Poetics of Listening",
-    description: "Listening across human and more-than-human worlds.",
-    link: "https://www.bloomsbury.com/us/poetics-of-listening-9798765125816/",
-    type: "book",
-    year: 2025,
-    author: "Brandon LaBelle",
-  },
-  {
-    title: "Touch Sanitation",
-    description: "Care performance art, maintenance systems.",
-    link: "https://feldmangallery.com/exhibition/096-touch-sanitation-ukeles-9-9-10-5-1984",
-    type: "art",
-    year: 1984,
-    author: "Mierle Laderman Ukeles",
-  },
-  {
-    title: "Material Ecocriticism",
-    description: "Storied matter, narrative agency.",
-    link: "https://www.researchgate.net/publication/295819661_Material_Ecocriticism_and_the_Creativity_of_Storied_Matter",
-    type: "paper",
-    year: 2013,
-    author: "Various",
-  },
-  {
-    title: "Embassy of the North Sea",
-    description: "The North Sea owns itself.",
-    link: "https://www.embassyofthenorthsea.com/",
-    type: "institution",
-    year: 2020,
-    author: "Embassy",
-  },
-  {
-    title: "Whose Ocean? Assembly",
-    description: "UN declarations from non-human perspectives.",
-    link: "https://www.uu.nl/en/research/sustainability/sustainable-ocean/our-research/whose-ocean",
-    type: "assembly",
-    year: 2025,
-    author: "Utrecht University",
-  },
-  {
-    title: "Speaker for the Living",
-    description: "Cooperation between human and nonhuman life.",
-    link: "https://zoop.earth/en/page/671/training-speakers-for-the-living",
-    type: "methodology",
-    year: 2022,
-    author: "Zoöp",
-  },
-  {
-    title: "Composing with More-Than-Human",
-    description: "Opera integrating interconnected existence.",
-    link: "https://ses.library.usyd.edu.au/bitstream/handle/2123/33813/Zhen_H_Thesis.pdf",
-    type: "thesis",
-    year: 2024,
-    author: "Hao Zhen",
-  },
-  {
-    title: "Rights of Nature Survey",
-    description: "Guardian models for Nature's voice.",
-    link: "https://www.soas.ac.uk/sites/default/files/2024-10/SOAS%20and%20LFN%20-%20Representing%20Rights%20of%20Nature%20A%20Survey%20of%20Representative.pdf",
-    type: "report",
-    year: 2024,
-    author: "SOAS & LFN",
-  },
-  {
-    title: "Codesign with More-Than-Humans",
-    description: "The First Multispecies Symposium (2100).",
-    link: "https://eujournalfuturesresearch.springeropen.com/articles/10.1186/s40309-022-00205-7",
-    type: "paper",
-    year: 2022,
-    author: "Various",
-  },
-  {
-    title: "Lifeworlds",
-    description: "Dialogue with planet's ecologies.",
-    link: "https://www.lifeworld.earth/",
-    type: "podcast",
-    year: 2022,
-    author: "Lifeworld",
-  },
-  {
-    title: "Musicians of the Planet",
-    description: "Making interspecies songs.",
-    link: "https://www.lifeworld.earth/episodes-blog/musiciansofplanet",
-    type: "podcast",
-    year: null,
-    author: "David Rothenberg",
-  },
-  {
-    title: "Relational Representation",
-    description: "Speaking WITH not ABOUT Nature.",
-    link: "https://journals.plos.org/water/article?id=10.1371/journal.pwat.0000236",
-    type: "paper",
-    year: 2024,
-    author: "Various",
-  },
-  {
-    title: "Fare Umanità",
-    description: "Anthropopoiesis: humans must be shaped.",
-    link: "https://www.pandorarivista.it/articoli/fare-umanita-di-francesco-remotti/",
-    type: "article",
-    year: 2020,
-    author: "Francesco Remotti",
-  },
-  {
-    title: "Minimum Viable Sentience (BOB)",
-    description: "AI and identities.",
-    link: "https://iancheng.com/minimumviablesentience",
-    type: "art",
-    year: 2020,
-    author: "Ian Cheng",
-  },
-  {
-    title: "Tanna",
-    description: "Tribal identities, decision making.",
-    link: null,
-    type: "film",
-    year: 2015,
-    author: "Martin Butler",
-  },
-];
+const databaseItems = databaseData.map((item, index) => ({
+  ...item,
+  id: index,
+  dateLabel: item.date ?? "—",
+  evidenceFlag: Boolean(item.evidence),
+  fullText: [
+    item.title,
+    item.what,
+    item.format,
+    item.note,
+    item.keywords,
+    item.otherNotes,
+    item.date,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase(),
+}));
 
-// Get unique types for filters
-const types = [...new Set(databaseItems.map((item) => item.type))].sort();
+const whatOptions = [
+  ...new Set(
+    databaseItems
+      .map((item) => item.what)
+      .filter((value): value is string => Boolean(value))
+  ),
+].sort((a, b) => a.localeCompare(b));
+
+const formatOptions = [
+  ...new Set(
+    databaseItems
+      .map((item) => item.format)
+      .filter((value): value is string => Boolean(value))
+  ),
+].sort((a, b) => a.localeCompare(b));
 ---
 
 <Layout title="Database - Design for the Continuum" activePage="database">
@@ -229,78 +49,135 @@ const types = [...new Set(databaseItems.map((item) => item.type))].sort();
     </p>
   </section>
 
-  <!-- Minimal Filter Section -->
+  <!-- Filter Section -->
   <section
-    class="px-6 lg:px-24 py-4 border-b-2 border-charcoal sticky top-[52px] bg-cream z-20"
+    class="px-6 lg:px-24 py-5 border-b-2 border-charcoal sticky top-[52px] bg-cream z-20"
   >
-    <div class="flex flex-wrap items-center gap-2" id="filters">
-      <button
-        class="filter-btn px-4 py-1.5 bg-charcoal text-cream font-semibold text-xs transition-colors"
-        data-filter="all"
-      >
-        All
+    <div class="filter-bar">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Cerca titoli, note, keywords…"
+        class="filter-input"
+      />
+
+      <select id="what-filter" class="filter-select">
+        <option value="all">Tutte le categorie</option>
+        {whatOptions.map((opt) => <option value={opt}>{opt}</option>)}
+      </select>
+
+      <select id="format-filter" class="filter-select">
+        <option value="all">Tutti i formati</option>
+        {formatOptions.map((opt) => <option value={opt}>{opt}</option>)}
+      </select>
+
+      <label class="filter-checkbox">
+        <input id="evidence-toggle" type="checkbox" class="accent-charcoal" />
+        Solo evidenze
+      </label>
+
+      <button id="clear-filters" class="filter-reset" type="button">
+        Reset
       </button>
-      {
-        types.map((type) => (
-          <button
-            class="filter-btn px-4 py-1.5 border border-charcoal/30 font-semibold text-xs hover:bg-charcoal hover:text-cream transition-colors"
-            data-filter={type}
-          >
-            {type}
-          </button>
-        ))
-      }
     </div>
   </section>
 
-  <!-- Minimal Database Rows -->
+  <!-- Database Rows -->
   <section>
     <div
       id="database-list"
       class="divide-y divide-charcoal border-t border-charcoal"
     >
       {
-        databaseItems.map((item, index) => {
+        databaseItems.map((item) => {
           return (
-            <a
-              href={item.link || "#"}
-              target={item.link ? "_blank" : undefined}
-              rel={item.link ? "noopener noreferrer" : undefined}
-              class:list={[
-                "database-row group block py-5 lg:py-6 px-6 lg:px-24 hover:bg-charcoal/5 transition-colors",
-                !item.link && "pointer-events-none opacity-60",
-              ]}
-              data-type={item.type}
+            <article
+              data-row
+              data-what={item.what || ""}
+              data-format={item.format || ""}
+              data-evidence={item.evidenceFlag}
+              data-fulltext={item.fullText}
+              data-open="false"
+              class="database-row group block py-5 lg:py-6 px-6 lg:px-24 hover:bg-charcoal/5 transition-colors"
             >
-              <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6">
-                {/* Author & Year */}
-                <div class="lg:w-[180px] shrink-0">
-                  <div class="font-semibold text-sm lg:text-base">
-                    {item.author}
+              <div class="flex flex-col gap-3 lg:gap-4">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      {item.evidenceFlag && (
+                        <span class="chip chip-accent">Evidence</span>
+                      )}
+                      {item.what && (
+                        <span class="chip chip-dark">{item.what}</span>
+                      )}
+                      {item.format && (
+                        <span class="chip chip-outline">{item.format}</span>
+                      )}
+                    </div>
+
+                    <h3 class="font-black text-lg lg:text-xl leading-tight mt-2">
+                      {item.title}
+                    </h3>
+                    <p class="text-sm lg:text-base font-semibold leading-relaxed opacity-80 mt-1 line-clamp summary-note">
+                      {item.note || "—"}
+                    </p>
                   </div>
-                  <div class="text-xs lg:text-sm opacity-50">
-                    {item.year || "—"}
+
+                  <div class="lg:w-[120px] shrink-0 text-sm font-semibold opacity-70">
+                    {item.dateLabel}
+                  </div>
+
+                  <div class="lg:w-[200px] shrink-0 flex flex-wrap gap-2 justify-start lg:justify-end">
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="chip chip-ghost text-xs font-bold border border-charcoal/50 hover:bg-charcoal hover:text-cream transition-colors"
+                      >
+                        Apri link
+                      </a>
+                    )}
+                    <button
+                      type="button"
+                      class="chip chip-dark text-xs font-bold toggle-btn"
+                      data-toggle
+                    >
+                      <span class="chevron" aria-hidden="true">
+                        ›
+                      </span>
+                      <span class="toggle-label">Espandi</span>
+                    </button>
                   </div>
                 </div>
 
-                {/* Type */}
-                <div class="lg:w-[100px] shrink-0">
-                  <span class="text-xs font-semibold uppercase tracking-wide opacity-60">
-                    {item.type}
-                  </span>
-                </div>
+                <div class="detail-panel hidden" data-detail>
+                  <div class="grid gap-4 lg:grid-cols-3">
+                    <div class="lg:col-span-2">
+                      <div class="label">Note</div>
+                      <p class="text-sm lg:text-base font-semibold leading-relaxed opacity-90 whitespace-pre-line">
+                        {item.note || "—"}
+                      </p>
+                    </div>
+                    <div>
+                      <div class="label">Keywords</div>
+                      <p class="text-sm leading-relaxed whitespace-pre-line opacity-80">
+                        {item.keywords || "—"}
+                      </p>
+                    </div>
+                  </div>
 
-                {/* Title & Description */}
-                <div class="flex-1 min-w-0">
-                  <h3 class="font-black text-lg lg:text-xl leading-tight mb-1 group-hover:text-pink transition-colors">
-                    {item.title}
-                  </h3>
-                  <p class="text-sm lg:text-base font-semibold leading-relaxed opacity-70 line-clamp-2">
-                    {item.description}
-                  </p>
+                  {item.otherNotes && (
+                    <div class="mt-3 border border-dashed border-charcoal/30 p-3 text-sm opacity-90 bg-white">
+                      <div class="label">Other notes</div>
+                      <p class="leading-relaxed whitespace-pre-line">
+                        {item.otherNotes}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
-            </a>
+            </article>
           );
         })
       }
@@ -313,40 +190,230 @@ const types = [...new Set(databaseItems.map((item) => item.type))].sort();
       <span id="count">{databaseItems.length}</span> resources
     </p>
   </section>
-
 </Layout>
 
+<style>
+  .filter-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    align-items: center;
+  }
+
+  .filter-input,
+  .filter-select,
+  .filter-reset {
+    height: 44px;
+    border: 1px solid rgba(17, 17, 17, 0.25);
+    background: #fff;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 6px;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .filter-input:focus,
+  .filter-select:focus {
+    outline: none;
+    border-color: var(--charcoal, #111);
+    box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.08);
+  }
+
+  .filter-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid rgba(17, 17, 17, 0.25);
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .filter-reset {
+    background: rgba(17, 17, 17, 0.04);
+    cursor: pointer;
+  }
+
+  .filter-reset:hover {
+    background: var(--charcoal, #111);
+    color: var(--cream, #f9f6ef);
+  }
+
+  .filter-reset:focus {
+    outline: none;
+    border-color: var(--charcoal, #111);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    padding: 0 12px;
+    border-radius: 9999px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    gap: 6px;
+  }
+
+  .chip-dark {
+    background: var(--charcoal, #111);
+    color: var(--cream, #f9f6ef);
+  }
+
+  .chip-outline {
+    border: 1px solid rgba(17, 17, 17, 0.3);
+    color: var(--charcoal, #111);
+    background: rgba(17, 17, 17, 0.03);
+  }
+
+  .chip-accent {
+    background: var(--pink, #ff4d79);
+    color: var(--charcoal, #111);
+  }
+
+  .chip-ghost {
+    background: rgba(17, 17, 17, 0.03);
+    color: var(--charcoal, #111);
+  }
+
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .detail-panel {
+    border-top: 1px solid rgba(17, 17, 17, 0.1);
+    padding-top: 14px;
+  }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+
+  .database-row[data-open="true"] {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 77, 121, 0.06),
+      rgba(17, 17, 17, 0.02)
+    );
+    border-left: 4px solid var(--pink, #ff4d79);
+    padding-left: calc(1.5rem - 4px);
+  }
+
+  .database-row[data-open="true"] .detail-panel {
+    display: block;
+  }
+  .database-row[data-open="false"] .detail-panel {
+    display: none;
+  }
+
+  .database-row[data-open="true"] .summary-note {
+    display: none;
+  }
+
+  .toggle-btn .chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .database-row[data-open="true"] .toggle-btn .chevron {
+    transform: rotate(90deg);
+  }
+</style>
+
 <script>
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const rows = document.querySelectorAll(".database-row");
+  // @ts-nocheck
+  /** @type {HTMLInputElement | null} */
+  const searchInput = document.getElementById("search-input");
+  /** @type {HTMLSelectElement | null} */
+  const whatFilter = document.getElementById("what-filter");
+  /** @type {HTMLSelectElement | null} */
+  const formatFilter = document.getElementById("format-filter");
+  /** @type {HTMLInputElement | null} */
+  const evidenceToggle = document.getElementById("evidence-toggle");
+  /** @type {HTMLButtonElement | null} */
+  const clearFilters = document.getElementById("clear-filters");
+  /** @type {HTMLElement[]} */
+  const rows = Array.from(document.querySelectorAll("[data-row]"));
+  const toggles = Array.from(document.querySelectorAll("[data-toggle]"));
   const countEl = document.getElementById("count");
 
-  filterBtns.forEach((btn) => {
+  const readValue = (el) => (el?.value ? String(el.value) : "");
+  const readChecked = (el) => Boolean(el?.checked);
+
+  const applyFilters = () => {
+    const term = readValue(searchInput).trim().toLowerCase();
+    const what = readValue(whatFilter) || "all";
+    const format = readValue(formatFilter) || "all";
+    const evidenceOnly = readChecked(evidenceToggle);
+
+    let visible = 0;
+
+    rows.forEach((row) => {
+      if (!(row instanceof HTMLElement)) return;
+      const rowWhat = row.dataset.what || "";
+      const rowFormat = row.dataset.format || "";
+      const rowEvidence = row.dataset.evidence === "true";
+      const text = row.dataset.fulltext || "";
+
+      const matchesSearch = !term || text.includes(term);
+      const matchesWhat = what === "all" || rowWhat === what;
+      const matchesFormat = format === "all" || rowFormat === format;
+      const matchesEvidence = !evidenceOnly || rowEvidence;
+
+      const show =
+        matchesSearch && matchesWhat && matchesFormat && matchesEvidence;
+      row.style.display = show ? "block" : "none";
+      if (show) visible++;
+    });
+
+    if (countEl) countEl.textContent = String(visible);
+  };
+
+  searchInput?.addEventListener("input", applyFilters);
+  whatFilter?.addEventListener("change", applyFilters);
+  formatFilter?.addEventListener("change", applyFilters);
+  evidenceToggle?.addEventListener("change", applyFilters);
+
+  clearFilters?.addEventListener("click", () => {
+    if (searchInput) searchInput.value = "";
+    if (whatFilter) whatFilter.value = "all";
+    if (formatFilter) formatFilter.value = "all";
+    if (evidenceToggle) evidenceToggle.checked = false;
+    applyFilters();
+  });
+
+  toggles.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const filter = btn.getAttribute("data-filter");
-
-      // Update button styles
-      filterBtns.forEach((b) => {
-        b.classList.remove("bg-charcoal", "text-cream");
-        b.classList.add("border", "border-charcoal/30");
-      });
-      btn.classList.add("bg-charcoal", "text-cream");
-      btn.classList.remove("border", "border-charcoal/30");
-
-      // Filter rows
-      let visibleCount = 0;
-      rows.forEach((row) => {
-        const rowType = row.getAttribute("data-type");
-        if (filter === "all" || rowType === filter) {
-          (row as HTMLElement).style.display = "block";
-          visibleCount++;
-        } else {
-          (row as HTMLElement).style.display = "none";
-        }
-      });
-
-      // Update count
-      if (countEl) countEl.textContent = String(visibleCount);
+      const row = btn.closest("[data-row]");
+      if (!row) return;
+      const isOpen = row.getAttribute("data-open") === "true";
+      row.setAttribute("data-open", isOpen ? "false" : "true");
+      const label = btn.querySelector(".toggle-label");
+      if (label) label.textContent = isOpen ? "Espandi" : "Chiudi";
     });
   });
+
+  applyFilters();
 </script>

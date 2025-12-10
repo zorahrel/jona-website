@@ -1,60 +1,71 @@
 ---
 interface Props {
-  activePage?: 'abstract' | 'framing' | 'research-log' | 'database' | 'cai';
+  activePage?: "abstract" | "framing" | "research-log" | "database" | "cai";
 }
 
-const { activePage = 'abstract' } = Astro.props;
+const { activePage = "abstract" } = Astro.props;
 
 const navItems = [
-  { id: 'abstract', label: 'abstract', href: '/' },
-  { id: 'framing', label: 'framing', href: '/framing' },
-  { id: 'research-log', label: 'research log', href: '/research-log' },
-  { id: 'database', label: 'database', href: '/database' },
-  { id: 'cai', label: 'CAI', href: '/cai' },
+  { id: "abstract", label: "abstract", href: "/" },
+  { id: "framing", label: "framing", href: "/framing" },
+  { id: "research-log", label: "research log", href: "/research-log" },
+  { id: "database", label: "database", href: "/database" },
+  { id: "cai", label: "CAI", href: "/cai" },
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-cream">
+<header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md header-shell">
   <div class="px-6 lg:px-24 py-3 flex items-center justify-between">
     <!-- Main Navigation - hidden on mobile -->
     <nav class="hidden lg:flex items-center gap-6">
-      {navItems.map((item) => (
-        <a 
-          href={item.href}
-          class:list={[
-            "text-lg leading-tight transition-colors duration-200",
-            item.id === 'cai' && "font-serif", /* CAI always in serif */
-            item.id === activePage 
-              ? "font-serif font-black italic" 
-              : "font-semibold hover:text-pink"
-          ]}
-        >
-          {item.label}
-        </a>
-      ))}
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "text-lg leading-tight transition-colors duration-200",
+              item.id === "cai" && "font-serif" /* CAI always in serif */,
+              item.id === activePage
+                ? "font-serif font-black italic"
+                : "font-semibold hover:text-pink",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </nav>
 
     <!-- Mobile menu button -->
-    <button 
+    <button
       class="lg:hidden p-2 text-charcoal"
       aria-label="Toggle menu"
       id="mobile-menu-btn"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
 
     <!-- Secondary Navigation - hidden on mobile -->
     <div class="hidden lg:flex items-center">
-      <a 
-        href="/about-me" 
+      <a
+        href="/about-me"
         class="pl-4 pr-16 py-1.5 bg-charcoal text-cream text-base font-semibold transition-all duration-200 hover:bg-pink"
       >
         about me
       </a>
-      <a 
-        href="/about-you" 
+      <a
+        href="/about-you"
         class="pl-16 pr-4 py-1.5 bg-cream text-charcoal text-base font-semibold border border-charcoal transition-all duration-200 hover:bg-charcoal hover:text-cream"
       >
         about you
@@ -63,26 +74,40 @@ const navItems = [
   </div>
 
   <!-- Mobile menu - Full Page -->
-  <div class="mobile-menu-hidden lg:!hidden fixed inset-0 top-[52px] bg-cream z-40 flex flex-col" id="mobile-menu">
+  <div
+    class="mobile-menu-hidden lg:!hidden fixed inset-0 bg-cream/90 backdrop-blur-md z-40 flex flex-col"
+    id="mobile-menu"
+    style="top: var(--bar-height, 52px);"
+  >
     <div class="flex-1 px-6 py-8 flex flex-col gap-6">
-      {navItems.map((item) => (
-        <a 
-          href={item.href}
-          class:list={[
-            "text-3xl transition-colors duration-200",
-            item.id === 'cai' && "font-serif", /* CAI always in serif */
-            item.id === activePage 
-              ? "font-serif font-black italic" 
-              : "font-semibold hover:text-pink"
-          ]}
-        >
-          {item.label}
-        </a>
-      ))}
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "text-3xl transition-colors duration-200",
+              item.id === "cai" && "font-serif" /* CAI always in serif */,
+              item.id === activePage
+                ? "font-serif font-black italic"
+                : "font-semibold hover:text-pink",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </div>
     <div class="px-6 pb-8 flex gap-0">
-      <a href="/about-me" class="pl-4 pr-12 py-2 bg-charcoal text-cream text-base font-semibold">about me</a>
-      <a href="/about-you" class="pl-12 pr-4 py-2 border border-charcoal text-charcoal text-base font-semibold">about you</a>
+      <a
+        href="/about-me"
+        class="pl-4 pr-12 py-2 bg-charcoal text-cream text-base font-semibold"
+        >about me</a
+      >
+      <a
+        href="/about-you"
+        class="pl-12 pr-4 py-2 border border-charcoal text-charcoal text-base font-semibold"
+        >about you</a
+      >
     </div>
   </div>
 </header>
@@ -91,13 +116,29 @@ const navItems = [
   .mobile-menu-hidden {
     display: none;
   }
+
+  :global(:root) {
+    --bar-height: 52px;
+  }
+
+  @media (min-width: 1024px) {
+    :global(:root) {
+      --bar-height: 72px;
+    }
+  }
+
+  .header-shell {
+    min-height: var(--bar-height);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 </style>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('mobile-menu-hidden');
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("mobile-menu-hidden");
   });
 </script>

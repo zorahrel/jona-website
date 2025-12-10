@@ -10,7 +10,12 @@ import Layout from "../layouts/Layout.astro";
     <h1
       class="font-black text-[12vw] lg:text-[11vw] leading-[0.85] tracking-[-0.02em]"
     >
-      <span class="block">[design for]</span>
+      <span
+        class="block"
+        id="bracketed-title"
+        data-words="design,for"
+        aria-label="design for">[design for]</span
+      >
       <span class="block">the continuum</span>
     </h1>
   </section>
@@ -151,6 +156,34 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <script>
+    const bracketedTitle = document.getElementById("bracketed-title");
+
+    if (bracketedTitle) {
+      const words = (bracketedTitle.getAttribute("data-words") || "")
+        .split(",")
+        .map((w) => w.trim())
+        .filter(Boolean);
+
+      let revealed: string[] = [];
+      const stepDelay = 650;
+      const animateClass = "word-fade-in";
+
+      bracketedTitle.textContent = "[ ]";
+
+      const revealWord = (index = 0) => {
+        if (index >= words.length) return;
+        revealed.push(words[index]);
+        bracketedTitle.textContent = `[${revealed.join(" ")}]`;
+        bracketedTitle.classList.add(animateClass);
+        setTimeout(() => bracketedTitle.classList.remove(animateClass), 420);
+        setTimeout(() => revealWord(index + 1), stepDelay);
+      };
+
+      setTimeout(() => revealWord(0), 300);
+    }
+  </script>
+
+  <script>
     const prevBtn = document.getElementById(
       "prev-btn"
     ) as HTMLButtonElement | null;
@@ -229,6 +262,21 @@ import Layout from "../layouts/Layout.astro";
       to {
         opacity: 1;
         transform: translateX(0);
+      }
+    }
+
+    .word-fade-in {
+      animation: wordFade 0.45s ease;
+    }
+
+    @keyframes wordFade {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
