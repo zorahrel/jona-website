@@ -1,15 +1,21 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
-  activePage?: 'abstract' | 'framing' | 'research-log' | 'database' | 'cai';
+  activePage?:
+    | "abstract"
+    | "framing"
+    | "research-log"
+    | "database"
+    | "cai"
+    | "etna";
   fitContent?: boolean;
 }
 
-const { title, activePage = 'abstract', fitContent = false } = Astro.props;
+const { title, activePage = "abstract", fitContent = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,16 +23,20 @@ const { title, activePage = 'abstract', fitContent = false } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Design for the Continuum - Can we speak with the more than human?" />
+    <meta
+      name="description"
+      content="Design for the Continuum - Can we speak with the more than human?"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
     <Header activePage={activePage} />
-    <main class:list={['flex-1 flex flex-col', fitContent ? '' : 'pb-24 lg:pb-28']}>
+    <main
+      class:list={["flex-1 flex flex-col", fitContent ? "" : "pb-24 lg:pb-28"]}
+    >
       <slot />
     </main>
     <Footer staticPosition={fitContent} />
   </body>
 </html>
-

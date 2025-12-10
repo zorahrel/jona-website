@@ -1,6 +1,12 @@
 ---
 interface Props {
-  activePage?: "abstract" | "framing" | "research-log" | "database" | "cai";
+  activePage?:
+    | "abstract"
+    | "framing"
+    | "research-log"
+    | "database"
+    | "cai"
+    | "etna";
 }
 
 const { activePage = "abstract" } = Astro.props;
@@ -11,6 +17,7 @@ const navItems = [
   { id: "research-log", label: "research log", href: "/research-log" },
   { id: "database", label: "database", href: "/database" },
   { id: "cai", label: "CAI", href: "/cai" },
+  { id: "etna", label: "etna", href: "/etna" },
 ];
 ---
 

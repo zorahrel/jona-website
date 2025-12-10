@@ -1,0 +1,380 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const slides = [
+  {
+    id: "01",
+    title:
+      "Each of us co-participates in mechanisms of self- and co-regulation at the biological and social level, which extend into an ecological realization: We do not have full control over these mechanisms and are compelled to surrender and let go.",
+    image: "/research/etna/first.png",
+    alt: "First image",
+  },
+  {
+    id: "02",
+    title:
+      "Certain psycho-physical practices facilitate our relation with the threshold world that lies beyond the boundaries of our skin, helping us to establish an intimate and collective relationship with the continuum.",
+    image: "/research/etna/second.png",
+    alt: "Second image",
+  },
+  {
+    id: "03",
+    title:
+      "The continuum is the space upon which all subjectivities open out—human and more-than-human, ancestors, future generations: it is the enchanted space of intersubjectivity.",
+    image: "/research/etna/third.png",
+    alt: "Third image",
+  },
+  {
+    id: "04",
+    title:
+      "Within the continuum, each of us has a counterpart. As in every diplomatic process, we too have our own counterpart, who dwells immersed in the continuum, with whom we can enter into dialogue but over whom we do not extend our dominion.",
+    image: "/research/etna/fourth.png",
+    alt: "Fourth image",
+  },
+  {
+    id: "05",
+    title:
+      "Our counterpart, the unconscious seat of regulations and realizations, unlearns rationality and presents itself to us.",
+    image: "/research/etna/fifth.png",
+    alt: "Fifth image",
+  },
+  {
+    id: "06",
+    title:
+      "This counterpart, as an intermediary spirit of and for all the creatures of the world—each with its own dividual subjectivity—is a being that inhabits the isthmus between the material and the immaterial worlds, in the form of an image.",
+    image: "/research/etna/sixth.png",
+    alt: "Sixth image",
+  },
+];
+---
+
+<Layout title="ETNA — Mundus Imaginalis" activePage="etna" fitContent={true}>
+  <!-- Progress Indicator -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <!-- Main Scroll Container -->
+  <div class="etna-container" id="etna-container">
+    <div class="horizontal-scroll" id="etna-scroll">
+      {
+        slides.map((slide) => (
+          <article class="slide-card" aria-label={`Etna slide ${slide.id}`}>
+            <div class="slide-content">
+              <div class="image-frame">
+                <img src={slide.image} alt={slide.alt} loading="lazy" />
+              </div>
+              <div class="slide-copy">
+                <p class="slide-index">{slide.id}</p>
+                <p class="slide-text">{slide.title}</p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Progress Bar */
+  .progress-container {
+    position: fixed;
+    top: var(--bar-height, 52px);
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(29, 29, 27, 0.1);
+    z-index: 100;
+  }
+
+  @media (min-width: 1024px) {
+    .progress-container {
+      top: var(--bar-height, 72px);
+    }
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: var(--color-charcoal);
+    width: 0%;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Main Container - Full Viewport Height */
+  .etna-container {
+    width: 100%;
+    height: calc(100vh - var(--bar-height, 52px));
+    overflow: hidden;
+    position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    .etna-container {
+      height: calc(100vh - var(--bar-height, 72px));
+    }
+  }
+
+  /* Horizontal Scroll Container */
+  .horizontal-scroll {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Each Slide - Full Viewport Width */
+  .slide-card {
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slide-content {
+    width: 100%;
+    max-width: 90vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .slide-content {
+      max-width: 85vw;
+      gap: 2.5rem;
+      padding: 3rem 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .slide-content {
+      max-width: 80vw;
+      gap: 3rem;
+      padding: 4rem 3rem;
+    }
+  }
+
+  /* Image Frame */
+  .image-frame {
+    width: 100%;
+    max-width: 600px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .image-frame {
+      max-width: 700px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .image-frame {
+      max-width: 800px;
+    }
+  }
+
+  .image-frame img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .image-frame img {
+      max-height: 55vh;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .image-frame img {
+      max-height: 60vh;
+    }
+  }
+
+  /* Text Content */
+  .slide-copy {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .slide-copy {
+      max-width: 800px;
+      gap: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .slide-copy {
+      max-width: 900px;
+      gap: 1.5rem;
+    }
+  }
+
+  .slide-index {
+    font-family: var(--font-family-serif);
+    font-weight: 900;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+
+  @media (min-width: 768px) {
+    .slide-index {
+      font-size: 1rem;
+    }
+  }
+
+  .slide-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .slide-text {
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .slide-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+  }
+</style>
+
+<script>
+  const scrollArea = document.getElementById("etna-scroll");
+  const container = document.getElementById("etna-container");
+  const progressBar = document.getElementById("progress-bar");
+
+  if (!scrollArea || !container || !progressBar) {
+    console.error("Required elements not found");
+  } else {
+    let isScrolling = false;
+    let scrollTimeout = null;
+    let isContainerActive = false;
+
+    // Update progress bar
+    const updateProgress = () => {
+      const scrollLeft = scrollArea.scrollLeft;
+      const scrollWidth = scrollArea.scrollWidth - scrollArea.clientWidth;
+      const progress = scrollWidth > 0 ? (scrollLeft / scrollWidth) * 100 : 0;
+      progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    };
+
+    // Initial progress
+    updateProgress();
+
+    // Listen to scroll events on the horizontal scroll area
+    scrollArea.addEventListener(
+      "scroll",
+      () => {
+        updateProgress();
+
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+
+        isScrolling = true;
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 100);
+      },
+      { passive: true }
+    );
+
+    // Prevent default page scroll when container is active
+    const preventPageScroll = (e) => {
+      if (isContainerActive && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+      }
+    };
+
+    // Convert vertical wheel to horizontal scroll
+    const handleWheel = (event) => {
+      if (!isContainerActive) return;
+
+      // Only intercept vertical scrolling
+      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        event.preventDefault();
+
+        const scrollSpeed = 1.5; // Adjust scroll speed
+        scrollArea.scrollBy({
+          left: event.deltaY * scrollSpeed,
+          behavior: "auto",
+        });
+      }
+    };
+
+    // Use Intersection Observer to detect when container is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isContainerActive =
+            entry.isIntersecting && entry.intersectionRatio > 0.5;
+
+          if (isContainerActive) {
+            // Disable body scroll when container is active
+            document.body.style.overflow = "hidden";
+            container.addEventListener("wheel", handleWheel, {
+              passive: false,
+            });
+          } else {
+            // Re-enable body scroll when container is not active
+            document.body.style.overflow = "";
+            container.removeEventListener("wheel", handleWheel);
+          }
+        });
+      },
+      { threshold: [0.5, 1.0] }
+    );
+
+    observer.observe(container);
+
+    // Handle window resize to update progress
+    window.addEventListener(
+      "resize",
+      () => {
+        updateProgress();
+      },
+      { passive: true }
+    );
+
+    // Cleanup on page unload
+    window.addEventListener("beforeunload", () => {
+      document.body.style.overflow = "";
+      container.removeEventListener("wheel", handleWheel);
+    });
+  }
+</script>
